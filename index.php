@@ -15,17 +15,24 @@
 
                 <div class="init"></div>
 
-                <h1>Light up, your life</h1>
+                <div class="move">
+                    <h1>Light up, your life</h1>
 
-                <div class="up_scale">
-                    
-                    <div class="scrollDown">
-                        <div class="text"></div>
-                        <div class="icon">
-                            <img src="/asset/image/main/down.png" alt="">
+                    <div class="up_scale">
+                        <div class="scrollDown">
+                            <div class="text"></div>
+                            <div class="icon">
+                                <img src="/asset/image/main/down.png" alt="">
+                            </div>
                         </div>
+                        <video src="/asset/video/movie.mp4" autoplay muted></video>
+                        <ul>
+                            <li class="act">01</li>
+                            <li>02</li>
+                            <li>03</li>
+                            <li>04</li>
+                        </ul>
                     </div>
-
                 </div>
 
             </section>
@@ -155,10 +162,22 @@
                         </span>
                     </dd>
                 </dl>
+
+                <div class="grid">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+
             </section>
 
             <section class="section06">
 
+                <video src="/asset/video/jb_contact_mov.mp4" autoplay muted loop></video>
+            
                 <div class="tbx">
                     <dl>
                         <dt>DISPLAY 전문기업, JBDISPLAY 와 함께 해보세요!</dt>

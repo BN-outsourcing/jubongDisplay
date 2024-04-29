@@ -4,15 +4,27 @@ import { isDesktop, isMobile } from "../../constant/responsive.js";
 
 export default ()=>{
 
-    gsap.set('.header',{
+    /* gsap.set('.header',{
         yPercent : -100,
         opacity : 0
+    }); */
+
+    new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {
+        speed: 600,
+        spaceBetween: 0,
     });
 
     gsap.from('.section01 .move',{
         clipPath: "circle(0% at 50% 50%)",
         delay : 0.5,
         duration : 2,
+    });
+
+    $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{
+        gsap.set(e,{
+            y : 100,
+            opacity : 0
+        })
     });
 
     const mm = gsap.matchMedia();
@@ -40,12 +52,20 @@ export default ()=>{
             duration : 0.5
         },'a')
         .from(".section01 .up_scale",{
-            // radius : 220
             top: ()=>`${700/980*100}%`,
         },'a+=25%')
         .from(".section01 .up_scale .movie_video",{
-            borderRadius: `220 220 0 0`,
-            width : ()=>`${1465/1920*100}%`
+            borderRadius: '220 220 0 0',
+            width : ()=>`${1465/1920*100}%`,
+            onComplete : ()=>{
+                const tl = gsap.timeline();
+                $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{
+                    tl.to(e,{
+                        y : 0,
+                        opacity : 1
+                    })
+                })
+            }
         });
 
     });

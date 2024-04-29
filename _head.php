@@ -24,6 +24,8 @@
 
 
     <!-- JS -->
+    <link rel="stylesheet" href="/js/plugin/swiper11.1.1/swiper.css">
+    <script src="/js/plugin/swiper11.1.1/swiper.js"></script>
     <script src="/js/plugin/gsap3.12.2/gsap.min.js"></script>
     <script src="/js/plugin/gsap3.12.2/ScrollTrigger.min.js"></script>
     <script src="/js/plugin/gsap3.12.2/ScrollSmoother.min.js"></script>

@@ -12,7 +12,7 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section02",
-        markers : true,
+        // markers : true,
         start : "top top",
         onEnter : ()=>{
             $('.header').addClass("on");
@@ -122,7 +122,6 @@ export default ()=>{
                 // return document.querySelector('._main .section02 .grid.left').scrollWidth + window.innerWidth;
             },
             y : ()=>{
-                // console.log(document.querySelector('._main .section02 .grid.left').scrollHeight + window.innerHeight);
                 if(min821){
                     return document.querySelector('._main .section02 .grid.left').scrollHeight + window.innerHeight;
                 }
@@ -136,9 +135,9 @@ export default ()=>{
                 // min821 ? 0 : -50
             },
             y : ()=>{
-                // console.log(-(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2)));
                 if(min821){
-                    return -(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2));
+                    // -(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2));
+                    return -(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2))
                 }
                 return 0;
                 // min821 ? -50 : 0
@@ -167,7 +166,8 @@ export default ()=>{
             },
             y : ()=>{
                 if(min821){
-                    return (document.querySelector('._main .section02 .grid.right').scrollHeight) - window.innerHeight/1.5;
+                    // (document.querySelector('._main .section02 .grid.right').scrollHeight)
+                    return window.innerHeight/2;
                 }
                 return 0;
                 // yPercent : min821 ? 50 : 0,

@@ -21,10 +21,9 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section03 .tbx h1",
-        endTrigger : "._main .section03 .layout.layout3",
+        endTrigger : "._main .section03",
         start : "top top+=10%",
-        end : "center center+=5%",
-        markers : true,
+        // markers : true,
         pin : true,
         pinSpacing : false,
     });
@@ -44,66 +43,78 @@ export default ()=>{
         },i === 0 ? "a" : "a+=50%")
     });
 
-    ScrollTrigger.create({
-        trigger : "._main .section03",
-        start : "top center",
-        onEnter : ()=>{
-            $('.cursor-point').hide();
-            $(window).off('mousemove',cursorPoint);
-
-            gsap.set('._main .section03 .cursor',{
-                opacity : 1,
-                left : ()=>{
-                    return parseInt($('.cursor-point').css('left'));
-                },
-                top  : ()=>{
-                    // console.log($('._main .section03')[0].getBoundingClientRect().top,parseInt($('.cursor-point').css("top")));
-                    return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
-                }
-            });
-
-            gsap.timeline()
-            .from('._main .section03 .cursor',{
-                width : 32,
-            },'a')
-            .to('._main .section03 .cursor',{
-                left : ()=>{
-                    if(window.innerWidth >= 1481){
-                        return "80%";
-                    }else{
     
-                        if(window.innerWidth < 821){
-                            return "80%";
-                        }else{
-                            return "90%";
-                        }
+    const cirMm = gsap.matchMedia();
+
+    cirMm.add({
+        min1281 : "(min-width:1281px)",
+        min1025 : "(min-width:1025px)",
+        min821 : "(min-width:821px)",
+        max820 : "(max-width:820px)",
+    },(context)=>{
+
+        const {max820,min821,min1025,min1281} = context.conditions;
+
+        ScrollTrigger.create({
+            trigger : "._main .section03",
+            start : "top center",
+            onEnter : ()=>{
+                $('.cursor-point').hide();
+                $(window).off('mousemove',cursorPoint);
     
+                gsap.set('._main .section03 .cursor',{
+                    opacity : 1,
+                    left : ()=>{
+                        return parseInt($('.cursor-point').css('left'));
+                    },
+                    top  : ()=>{
+                        return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
                     }
-                },
-                top : ()=>{
-                    return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
-                },
-                yPercent : -50,
-                immediateRender: false,
-            },'a');
+                });
+    
+                gsap.timeline()
+                .fromTo('._main .section03 .cursor',{
+                    width : 32,
+                },{
+                    width : ()=>{
+                        if(min1281) return 531;
+                        if(min1025) return 401;
+                        if(min821) return 261;
+                        if(max820) return 201;
+                    },
+                },'a')
+                .to('._main .section03 .cursor',{
+                    left : ()=>{
+                        if(min821) return "80%"
+                        if(max820) return "90%"
+                    },
+                    top : ()=>{
+                        return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
+                    },
+                    yPercent : -50,
+                    immediateRender: false,
+                });
+    
+            },
+            onLeaveBack : ()=>{
+                $('.cursor-point').show();
+    
+                gsap.set('._main .section03 .cursor',{
+                    opacity : 0,
+                    left : ()=>{
+                        return 0;
+                    },
+                    top  : ()=>{
+                        return 0;
+                    }
+                });
+    
+                $(window).on('mousemove',cursorPoint);
+            }
+        });
 
-        },
-        onLeaveBack : ()=>{
-            $('.cursor-point').show();
-
-            gsap.set('._main .section03 .cursor',{
-                opacity : 0,
-                left : ()=>{
-                    return 0;
-                },
-                top  : ()=>{
-                    return 0;
-                }
-            });
-
-            $(window).on('mousemove',cursorPoint);
-        }
     });
+
 
 
     const mm = gsap.matchMedia();
@@ -175,29 +186,20 @@ export default ()=>{
     const mm2 = gsap.matchMedia();
 
     mm2.add({
-        min1481 : "(min-width : 1481px)",
-        is1480 : "(max-width : 1480px)",
-        is1024 : "(max-width : 1024px)",
-        is820 : "(max-width : 820px)",
+        min1281 : "(min-width:1281px)",
+        min1025 : "(min-width:1025px)",
+        min821 : "(min-width:821px)",
+        max820 : "(max-width:820px)",
     },(context)=>{
 
-        const {min1481,is820} = context.conditions;
+        const {min821,max820} = context.conditions;
 
         const tls = gsap.timeline();
 
         tls.to('._main .section03 .cursor',{
             left : ()=>{
-                if(min1481){
-                    return "-10%";
-                }else{
-
-                    if(is820){
-                        return "-10%";
-                    }else{
-                        return "-30%";
-                    }
-                    
-                }
+                if(min821) return "-10%";
+                if(max820) return "-20%";
             },
             top : ()=>{
                 return ($('._main .section03 .layout.layout2 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout2 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
@@ -216,17 +218,8 @@ export default ()=>{
         })
         tls.to('._main .section03 .cursor',{
             left : ()=>{
-                if(min1481){
-                    return "80%";
-                }else{
-
-                    if(is820){
-                        return "80%";
-                    }else{
-                        return "90%";
-                    }
-
-                }
+                if(min821) return "80%";
+                if(max820) return "90%";
             },
             top : ()=>{
                 return ($('._main .section03 .layout.layout3 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout3 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;

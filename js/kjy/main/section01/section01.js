@@ -1,7 +1,5 @@
 "use strict"
 
-import { isDesktop, isMobile } from "../../constant/responsive.js";
-
 export default ()=>{
 
     $('html').css('overflow','hidden');

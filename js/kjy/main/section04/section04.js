@@ -2,7 +2,21 @@
 
 import { isDesktop, isMobile } from "../../constant/responsive.js";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default ()=>{
+
+    ScrollTrigger.create({
+        trigger : "._main .section04",
+        markers : true,
+        start : "top top",
+        onEnter : ()=>{
+            $('.header').addClass("on");
+        },
+        onLeaveBack : ()=>{
+            $('.header').removeClass("on");
+        }
+    });
 
     const mm = gsap.matchMedia();
 
@@ -15,7 +29,7 @@ export default ()=>{
                 trigger : "._main .section04",
                 start : "top top",
                 pin : true,
-                pinType : isDesktop ? "transform" : "fixed",
+                // pinType : isDesktop ? "transform" : "fixed",
                 scrub : true,
                 end : "+=300%"
             }

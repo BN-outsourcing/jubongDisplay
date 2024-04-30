@@ -4,20 +4,35 @@ import { isDesktop, isMobile } from "../../constant/responsive.js";
 
 export default ()=>{
 
-    /* gsap.set('.header',{
-        yPercent : -100,
-        opacity : 0
-    }); */
+    $('html').css('overflow','hidden');
 
-    new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {
+    const swiper = new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {
         speed: 600,
         spaceBetween: 0,
+        touchRatio : 0,
+        pagination : {
+            el : "._main .section01 .move .up_scale .movie_video ul",
+            clickable : true,
+            bulletActiveClass : "act",
+            bulletClass : "null",
+            renderBullet : (index, className)=>{
+                return `<li class=${className}>${String(index+1).padStart(2,'0')}</li>`;
+            }
+        },
+        on : {
+            slideChangeTransitionEnd : ()=>{
+                $('._main .section01 .move .up_scale .movie_video .swiper-slide-active').find('video')[0].play();
+            }
+        }
     });
 
     gsap.from('.section01 .move',{
         clipPath: "circle(0% at 50% 50%)",
         delay : 0.5,
         duration : 2,
+        onComplete : ()=>{
+            $('html').css('overflow-y','auto');
+        }
     });
 
     $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{
@@ -29,16 +44,25 @@ export default ()=>{
 
     const mm = gsap.matchMedia();
 
-    mm.add({isDesktop,isMobile},(context)=>{
+    mm.add({
+        min1281 : "(min-width:1281px)",
+        max1280 : "(max-width:1280px)",
+        max1024 : "(max-width:1024px)",
+        isDesktop,
+        max820 : "(max-width:820px)",
+        max480 : "(max-width:480px)"
+    },(context)=>{
 
-        const { isDesktop } = context.conditions;
+        const { min1281,max1280,max1024,max820,max480 } = context.conditions;
+
+        // console.log(min1281,max1280,max1024,max820,max480);
 
         gsap.timeline({
             scrollTrigger : {
                 trigger : ".section01",
                 markers : true,
                 pin : true,
-                pinType : isDesktop ? "transform" : "fixed",
+                // pinType : isDesktop ? "transform" : "fixed",
                 scrub : true,
                 end : "+=200%"
             }
@@ -55,7 +79,13 @@ export default ()=>{
             top: ()=>`${700/980*100}%`,
         },'a+=25%')
         .from(".section01 .up_scale .movie_video",{
-            borderRadius: '220 220 0 0',
+            borderRadius: ()=>{
+                if(min1281) return '220 220 0 0';                
+                if(max480) return '50 50 0 0';
+                if(max820) return '100 100 0 0';
+                if(max1024) return '140 140 0 0';
+                if(max1280) return '170 170 0 0';
+            },
             width : ()=>`${1465/1920*100}%`,
             onComplete : ()=>{
                 const tl = gsap.timeline();
@@ -64,7 +94,7 @@ export default ()=>{
                         y : 0,
                         opacity : 1
                     })
-                })
+                });
             }
         });
 

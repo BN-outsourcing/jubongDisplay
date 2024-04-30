@@ -21,7 +21,10 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section03 .tbx h1",
+        endTrigger : "._main .section03 .layout.layout3",
         start : "top top+=10%",
+        end : "center center+=5%",
+        markers : true,
         pin : true,
         pinSpacing : false,
     });

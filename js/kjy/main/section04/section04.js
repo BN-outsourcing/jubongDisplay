@@ -8,7 +8,7 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section04",
-        markers : true,
+        // markers : true,
         start : "top top",
         onEnter : ()=>{
             $('.header').addClass("on");

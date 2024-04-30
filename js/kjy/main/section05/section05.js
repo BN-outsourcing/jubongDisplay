@@ -1,5 +1,7 @@
 "use strict"
 
+import { isDesktop, isMobile } from "../../constant/responsive.js";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default ()=>{
@@ -16,62 +18,84 @@ export default ()=>{
         }
     });
 
-    ScrollTrigger.create(
-        {
-            trigger : "._main .section05 .tbx",
-            endTrigger : "._main .section05",
-            start : "center center",
-            end : "bottom bottom",
-            pin : true,
-            pinSpacing : false,
-            // markers : true,
-        }
-    )
 
-    $('._main .section05 .grid .col').each((_,e)=>{
+    const mm = gsap.matchMedia();
 
-        gsap.set(e,{
-            xPercent : `random(50%, -50%)`,
-            // yPercent : `random(0%, 100%, 3.5%)`,
-            rotateX : 'random(0, -60)',
-            scaleY : 'random(1, 1.3)',
-            z : 'random(-100, -5000)'
+    mm.add({
+        isDesktop,
+        isMobile
+    },(context)=>{
+
+        const {} = context.conditions;
+
+        $('._main .section05 .grid .col').each((_,e)=>{
+
+            gsap.set(e,{
+                z : 'random(-600, -4000)',
+                rotateX : 'random(0, -50)',
+                scaleY : 'random(1, 1.2)',
+                xPercent : `random(-50, -50)`,
+                yPercent : `random(-50, 100)`,
+                transformOrigin: "50% 0%"
+            })
+    
+        });
+    
+        const ab = gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .section05",
+                start : "top center",
+                end : "center center",
+                scrub : true,
+                // markers : true
+            }
         })
-
-    });
-
-    const tl = gsap.timeline({
-        scrollTrigger : {
-            trigger : "._main .section05",
-            start : "top center",
-            end : "bottom bottom",
-            scrub : true,
-            markers : true
-        }
-    });
-
-    tl.fromTo('._main .section05 .grid',{
-        yPercent : 50
-    },{
-        yPercent : 0
-    },'a')
-
-    $('._main .section05 .grid .col').each((_,e)=>{
-
-        tl.fromTo(e,{
-            y : `random(-5%, -30%)`,
+    
+        ab.fromTo('._main .section05 .grid',{
+            yPercent : 75
         },{
-            y : "+=5%"
-        },'a+=5%')
+            yPercent : 0,
+            
+        },'b');
+    
+        $('._main .section05 .tbx dd .p span').each((i,e)=>{
+            ab.to(e,{
+                clipPath: "inset(0% 0% 0% 0%)"
+            },i === 0 ? 'b' : "b+=50%");
+        })
+    
+    
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .section05",
+                start : isDesktop ? "top top+=25%" : "top top",
+                end : "bottom center",
+                /* pin : true,
+                pinSpacing : true, */
+                scrub : true,
+                // markers : true
+            }
+        });
+        
+        $('._main .section05 .grid .col').each((_,e)=>{
+    
+            tl.to(e,{
+                rotateX : 0,
+                scaleY : 1,
+                xPercent : 0,
+                yPercent : 0,
+                transformOrigin: "50% 0%"
+            },'a');
+    
+        });
+    
+        tl.fromTo('._main .section05 .grid',{
+            z : 0
+        },{
+            z : 6500
+        },'a');
 
-    });
+    })
 
-    tl.fromTo('._main .section05 .grid',{
-        scale : 0.4,
-        z : 0, 
-    },{
-        scale : 0.8,
-        z : 10000,
-    },'a+=5%')
 
 }

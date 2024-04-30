@@ -25,15 +25,32 @@ export default ()=>{
             }
         }
     });
-
+    
     gsap.from('.section01 .move',{
         clipPath: "circle(0% at 50% 50%)",
         delay : 0.5,
         duration : 2,
+        onStart : ()=>{
+            gsap.timeline()
+            .fromTo('._main .section01 .move h1',{
+                y : 100,
+                opacity : 0
+            },{
+                y : 0,
+                opacity : 1
+            })
+            .fromTo('._main .section01 .move .up_scale',{
+                y : 100,
+                opacity : 0
+            },{
+                y : 0,
+                opacity : 1
+            });
+        },
         onComplete : ()=>{
             $('html').css('overflow-y','auto');
         }
-    });
+    })
 
     $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{
         gsap.set(e,{
@@ -48,19 +65,17 @@ export default ()=>{
         min1281 : "(min-width:1281px)",
         max1280 : "(max-width:1280px)",
         max1024 : "(max-width:1024px)",
-        isDesktop,
+        min821 : "(min-width:821px)",
         max820 : "(max-width:820px)",
         max480 : "(max-width:480px)"
     },(context)=>{
 
-        const { min1281,max1280,max1024,max820,max480 } = context.conditions;
-
-        // console.log(min1281,max1280,max1024,max820,max480);
+        const { min1281,max1280,max1024,min821,max820,max480 } = context.conditions;
 
         gsap.timeline({
             scrollTrigger : {
                 trigger : ".section01",
-                markers : true,
+                // markers : true,
                 pin : true,
                 // pinType : isDesktop ? "transform" : "fixed",
                 scrub : true,
@@ -86,7 +101,13 @@ export default ()=>{
                 if(max1024) return '140 140 0 0';
                 if(max1280) return '170 170 0 0';
             },
-            width : ()=>`${1465/1920*100}%`,
+            width : ()=>{
+                if(min821){
+                    return `${1465/1920*100}%`
+                }else{
+                    return `90%`
+                }
+            },
             onComplete : ()=>{
                 const tl = gsap.timeline();
                 $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{

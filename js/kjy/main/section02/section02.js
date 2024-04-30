@@ -12,7 +12,7 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section02",
-        // markers : true,
+        markers : true,
         start : "top top",
         onEnter : ()=>{
             $('.header').addClass("on");
@@ -71,6 +71,7 @@ export default ()=>{
                 pin : true,
                 scrub : true,
                 end : "+=300%",
+                invalidateOnRefresh : true,
             }
         })
         .fromTo('._main .section02 .tbx h1',{
@@ -102,38 +103,45 @@ export default ()=>{
                 }
             }
         })
-        .from('._main .section02 .tbx a',{
+        .fromTo('._main .section02 .tbx a',{
             marginTop : "-50%",
+        },{
+            marginTop : '1.7777777778em',
         })
-        .from('._main .section02 .tbx a',{
+        .fromTo('._main .section02 .tbx a',{
             opacity : 0,
+        },{
+            opacity : 1,
         })
         .fromTo('._main .section02 .flex .grid.left',{
             x : ()=>{
                 if(min821) return 0;
                 // return document.querySelector('._main .section02 .grid.left').scrollWidth;
                 // min821 ? 0 : 100
-                return window.innerWidth
+                return document.querySelector('._main .section02 .grid.left').scrollWidth;
+                // return document.querySelector('._main .section02 .grid.left').scrollWidth + window.innerWidth;
             },
             y : ()=>{
+                // console.log(document.querySelector('._main .section02 .grid.left').scrollHeight + window.innerHeight);
                 if(min821){
-                    return document.querySelector('._main .section02 .grid.left').scrollHeight;
+                    return document.querySelector('._main .section02 .grid.left').scrollHeight + window.innerHeight;
                 }
                 return 0;
                 // yPercent : min821 ? 100 : 0
             }
         },{
+            x : ()=>{
+                if(min821) return 0;
+                return -(document.querySelector('._main .section02 .grid.left').scrollWidth - window.innerWidth/1.5);
+                // min821 ? 0 : -50
+            },
             y : ()=>{
+                // console.log(-(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2)));
                 if(min821){
                     return -(document.querySelector('._main .section02 .grid.left').scrollHeight - (window.innerHeight/2));
                 }
                 return 0;
                 // min821 ? -50 : 0
-            },
-            x : ()=>{
-                if(min821) return 0;
-                return -(document.querySelector('._main .section02 .grid.left').scrollWidth - (window.innerWidth/1.5));
-                // min821 ? 0 : -50
             },
             duration : 2,
         },'a')
@@ -142,7 +150,7 @@ export default ()=>{
                 if(min821) return 0;
                 // return -document.querySelector('._main .section02 .grid:not(.left)').scrollWidth;
                 // min821 ? 0 : -100
-                return -window.innerWidth;
+                return -(document.querySelector('._main .section02 .grid.right').scrollWidth + window.innerWidth);
             },
             y : ()=>{
                 if(min821) {
@@ -154,7 +162,7 @@ export default ()=>{
         },{
             x : ()=>{
                 if(min821) return 0;
-                return document.querySelector('._main .section02 .grid.right').scrollWidth + (window.innerWidth/2);
+                return window.innerWidth/2.5;
                 // min821 ? 0 : -50
             },
             y : ()=>{

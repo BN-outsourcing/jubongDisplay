@@ -45,7 +45,7 @@ export default ()=>{
     });
 
     
-    const cirMm = gsap.matchMedia();
+    /* const cirMm = gsap.matchMedia();
 
     cirMm.add({
         min1281 : "(min-width:1281px)",
@@ -56,69 +56,33 @@ export default ()=>{
 
         const {max820,min821,min1025,min1281} = context.conditions;
 
-        ScrollTrigger.create({
-            trigger : "._main .section03",
-            start : "top center",
-            onEnter : ()=>{
-                $('.cursor-point').hide();
-                $(window).off('mousemove',cursorPoint);
-    
-                gsap.set('._main .section03 .cursor',{
-                    opacity : 1,
-                    left : ()=>{
-                        return parseInt($('.cursor-point').css('left'));
-                    },
-                    top  : ()=>{
-                        return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
-                    }
-                });
-    
-                gsap.timeline({
-                    defaults : {
-                        immediateRender: false,
-                    }
-                })
-                .fromTo('._main .section03 .cursor',{
-                    width : 32,
-                },{
-                    width : ()=>{
-                        if(min1281) return 531;
-                        if(min1025) return 401;
-                        if(min821) return 261;
-                        if(max820) return 201;
-                    },
-                },'a')
-                .to('._main .section03 .cursor',{
-                    left : ()=>{
-                        if(min821) return "80%"
-                        if(max820) return "90%"
-                    },
-                    top : ()=>{
-                        return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
-                    },
-                    yPercent : -50,
-                });
-    
-            },
-            onLeaveBack : ()=>{
-                $('.cursor-point').show();
-    
-                gsap.set('._main .section03 .cursor',{
-                    opacity : 0,
-                    left : ()=>{
-                        return 0;
-                    },
-                    top  : ()=>{
-                        return 0;
-                    }
-                });
-    
-                $(window).on('mousemove',cursorPoint);
-            }
+        
+
+    }); */
+
+    const slideArr = [];
+
+    $('._main .section03 .flex .swiper').each((_,e)=>{
+        const swiper = new Swiper(e,{
+            effect : 'fade',
+        });
+        slideArr.push(swiper);
+    });
+
+    $('._main .section03 .flex .box ul').each((i,e)=>{
+
+        $(e).find('li').each((_,e)=>{
+
+            $(e).find('div').mouseover(function(){
+                const index = $(this).parent().index();
+                $(this).parent().siblings().removeClass('act');
+                $(this).parent().addClass('act');
+                slideArr[i].slideTo(index);
+            });
+
         });
 
     });
-
 
 
     const mm = gsap.matchMedia();
@@ -163,30 +127,6 @@ export default ()=>{
 
     });
 
-    const slideArr = [];
-
-    $('._main .section03 .flex .swiper').each((_,e)=>{
-        const swiper = new Swiper(e,{
-            effect : 'fade',
-        });
-        slideArr.push(swiper);
-    });
-
-    $('._main .section03 .flex .box ul').each((i,e)=>{
-
-        $(e).find('li').each((_,e)=>{
-
-            $(e).find('div').mouseover(function(){
-                const index = $(this).parent().index();
-                $(this).parent().siblings().removeClass('act');
-                $(this).parent().addClass('act');
-                slideArr[i].slideTo(index);
-            });
-
-        });
-
-    });
-
     const mm2 = gsap.matchMedia();
 
     mm2.add({
@@ -196,11 +136,78 @@ export default ()=>{
         max820 : "(max-width:820px)",
     },(context)=>{
 
-        const {min821,max820} = context.conditions;
+        const {min821,max820,min1025,min1281} = context.conditions;
 
-        const tls = gsap.timeline();
+        ScrollTrigger.create({
+            trigger : "._main .section03",
+            start : "top center",
+            onEnter : ()=>{
+                $('.cursor-point').hide();
+                $(window).off('mousemove',cursorPoint);
+    
+                gsap.set('._main .section03 .cursor',{
+                    opacity : 1,
+                    left : ()=>{
+                        return parseInt($('.cursor-point').css('left'));
+                    },
+                    top  : ()=>{
+                        return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
+                    }
+                });
+    
+                gsap.timeline({
+                    defaults : {
+                        immediateRender: false,
+                    },
+                })
+                .fromTo('._main .section03 .cursor',{
+                    width : 32,
+                },{
+                    width : ()=>{
+                        if(min1281) return 531;
+                        if(min1025) return 401;
+                        if(min821) return 261;
+                        if(max820) return 201;
+                    },
+                },'a')
+                .to('._main .section03 .cursor',{
+                    left : ()=>{
+                        if(min821) return "80%"
+                        if(max820) return "90%"
+                    },
+                    top : ()=>{
+                        return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
+                    },
+                    yPercent : -50,
+                },'a');
+    
+            },
+            onLeaveBack : ()=>{
+                $('.cursor-point').show();
+    
+                gsap.set('._main .section03 .cursor',{
+                    opacity : 0,
+                    left : ()=>{
+                        return 0;
+                    },
+                    top  : ()=>{
+                        return 0;
+                    }
+                });
+    
+                $(window).on('mousemove',cursorPoint);
+            }
+        });
 
-        tls.to('._main .section03 .cursor',{
+        gsap.fromTo('._main .section03 .cursor',{
+            left : ()=>{
+                if(min821) return "80%"
+                if(max820) return "90%"
+            },
+            top : ()=>{
+                return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
+            },
+        },{
             left : ()=>{
                 if(min821) return "-10%";
                 if(max820) return "-20%";
@@ -219,8 +226,9 @@ export default ()=>{
                 scrub : true,
                 invalidateOnRefresh : true,
             }
-        })
-        tls.to('._main .section03 .cursor',{
+        });
+
+        gsap.to('._main .section03 .cursor',{
             left : ()=>{
                 if(min821) return "80%";
                 if(max820) return "90%";

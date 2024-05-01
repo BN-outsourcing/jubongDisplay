@@ -18,7 +18,6 @@ if(!useIsMobile()){
     });
 }
 
-
 export const cursorPoint = (e)=>{
     const {clientX,clientY} = e;
     gsap.to('.cursor-point',{

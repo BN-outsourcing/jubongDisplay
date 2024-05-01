@@ -12,7 +12,7 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section02",
-        markers : true,
+        // markers : true,
         start : "top top",
         invalidateOnRefresh : true,
         onEnter : ()=>{

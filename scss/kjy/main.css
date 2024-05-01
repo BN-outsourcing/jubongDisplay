@@ -1086,10 +1086,12 @@
   background: #f2f2f4;
   overflow: hidden;
   position: relative;
-  padding: 277px 8.4375% 531px 5.9895833333%;
+  padding: 0 8.4375% 0 5.9895833333%;
+  height: 100vh;
 }
 ._main .section05 .tbx {
-  position: relative;
+  position: absolute;
+  top: 28.5132382892%;
   z-index: 3;
 }
 ._main .section05 .tbx dt {
@@ -1186,7 +1188,7 @@
 }
 @media screen and (max-width: 1024px) {
   ._main .section05 {
-    padding: 277px 2.5% 531px;
+    padding: 0 2.5%;
   }
   ._main .section05 .tbx dt {
     font-size: 52px;
@@ -1199,9 +1201,6 @@
   }
 }
 @media screen and (max-width: 820px) {
-  ._main .section05 {
-    padding: 157px 2.5% 321px;
-  }
   ._main .section05 .tbx dt {
     font-size: 42px;
   }
@@ -1218,6 +1217,9 @@
   }
   ._main .section05 .tbx dd {
     font-size: 18px;
+  }
+  ._main .section05 .grid .col {
+    border-radius: 10px;
   }
 }
 ._main .section06 {

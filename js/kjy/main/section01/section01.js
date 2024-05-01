@@ -1,12 +1,16 @@
 "use strict"
 
+import { useIsMobile } from "../../constant/responsive.js";
+
 gsap.registerPlugin(ScrollToPlugin);
 
 export default ()=>{
 
     window.onload = function() {
-        gsap.to(window, { duration: 0.1, scrollTo: 0 });
-        $('html').css('overflow','hidden');
+        if(!useIsMobile()){
+            gsap.to(window, { duration: 0.1, scrollTo: 0 });
+            $('html').css('overflow','hidden');
+        }
     };
 
     const swiper = new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {

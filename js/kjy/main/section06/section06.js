@@ -10,6 +10,7 @@ export default ()=>{
         trigger : "._main .section06",
         // markers : true,
         start : "top top",
+        invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').addClass("on");
         },

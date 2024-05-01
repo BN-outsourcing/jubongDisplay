@@ -1,8 +1,13 @@
 "use strict"
 
+gsap.registerPlugin(ScrollToPlugin);
+
 export default ()=>{
 
-    $('html').css('overflow','hidden');
+    window.onload = function() {
+        gsap.to(window, { duration: 0.1, scrollTo: 0 });
+        $('html').css('overflow','hidden');
+    };
 
     const swiper = new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {
         speed: 600,
@@ -19,7 +24,9 @@ export default ()=>{
         },
         on : {
             slideChangeTransitionEnd : ()=>{
-                $('._main .section01 .move .up_scale .movie_video .swiper-slide-active').find('video')[0].play();
+                if($('._main .section01 .move .up_scale .movie_video .swiper-slide-active').find('video').length !== 0){
+                    $('._main .section01 .move .up_scale .movie_video .swiper-slide-active').find('video')[0].play();
+                }
             }
         }
     });
@@ -47,6 +54,7 @@ export default ()=>{
         },
         onComplete : ()=>{
             $('html').css('overflow-y','auto');
+            swiper.params.touchRatio = 1;
         }
     })
 

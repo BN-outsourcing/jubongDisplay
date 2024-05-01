@@ -11,6 +11,7 @@ export default ()=>{
         trigger : "._main .section03",
         // markers : true,
         start : "top top",
+        invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').removeClass("on");
         },
@@ -72,7 +73,11 @@ export default ()=>{
                     }
                 });
     
-                gsap.timeline()
+                gsap.timeline({
+                    defaults : {
+                        immediateRender: false,
+                    }
+                })
                 .fromTo('._main .section03 .cursor',{
                     width : 32,
                 },{
@@ -92,7 +97,6 @@ export default ()=>{
                         return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
                     },
                     yPercent : -50,
-                    immediateRender: false,
                 });
     
             },

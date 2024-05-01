@@ -12,8 +12,9 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section02",
-        // markers : true,
+        markers : true,
         start : "top top",
+        invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').addClass("on");
             $('.header').removeClass("hide");
@@ -69,8 +70,8 @@ export default ()=>{
                 trigger : "._main .section02",
                 // markers : true,
                 pin : true,
-                scrub : true,
-                end : "+=300%",
+                scrub : 1,
+                end : "+=500%",
                 invalidateOnRefresh : true,
             }
         })
@@ -142,7 +143,7 @@ export default ()=>{
                 return 0;
                 // min821 ? -50 : 0
             },
-            duration : 2,
+            duration : 3,
         },'a')
         .fromTo('._main .section02 .flex .grid.right',{
             x : ()=>{
@@ -172,7 +173,7 @@ export default ()=>{
                 return 0;
                 // yPercent : min821 ? 50 : 0,
             },
-            duration : 2,
+            duration : 3,
         },'a');
 
     })

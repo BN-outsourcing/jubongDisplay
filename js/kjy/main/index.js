@@ -10,38 +10,14 @@ import section06 from "./section06/section06.js";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
-let smoother = ScrollSmoother.create({
-    smooth: 1,
-});
+let smoother;
 
-smoother.paused(true);
-
-$(window).resize(function(){
-
-    if(window.innerWidth >= 821 && !useIsMobile()){
-        console.log(1);
-
-        if(smoother === undefined){
-            smoother = ScrollSmoother.create({
-                smooth: 1,
-            });
-            ScrollTrigger.refresh();
-        }
-        
-    }else{
-        
-        if(smoother){
-            smoother.kill();
-            smoother = undefined;
-        }
-
-    }
-
-}).resize();
-
-if(smoother){
-    smoother.paused(false);
+if(!useIsMobile()){
+    smoother = ScrollSmoother.create({
+        smooth: 1,
+    });
 }
+
 
 export const cursorPoint = (e)=>{
     const {clientX,clientY} = e;

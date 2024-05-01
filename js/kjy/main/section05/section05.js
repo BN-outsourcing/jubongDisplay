@@ -10,6 +10,7 @@ export default ()=>{
         trigger : "._main .section05",
         // markers : true,
         start : "top top",
+        invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').removeClass("on");
         },
@@ -26,15 +27,15 @@ export default ()=>{
         isMobile
     },(context)=>{
 
-        const {} = context.conditions;
+        const {isDesktop,isMobile} = context.conditions;
 
         $('._main .section05 .grid .col').each((_,e)=>{
 
             gsap.set(e,{
-                z : 'random(-600, -4000)',
+                z : 'random(-1000, -6000)',
                 rotateX : 'random(0, -50)',
                 scaleY : 'random(1, 1.2)',
-                xPercent : `random(-50, -50)`,
+                xPercent : `random(-50, 50)`,
                 yPercent : `random(-50, 100)`,
                 transformOrigin: "50% 0%"
             })
@@ -55,7 +56,6 @@ export default ()=>{
             yPercent : 75
         },{
             yPercent : 0,
-            
         },'b');
     
         $('._main .section05 .tbx dd .p span').each((i,e)=>{

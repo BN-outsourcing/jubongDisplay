@@ -14,6 +14,10 @@ export default ()=>{
     };
 
     const swiper = new Swiper('._main .section01 .move .up_scale .movie_video .swiper', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         speed: 600,
         spaceBetween: 0,
         touchRatio : 0,
@@ -93,9 +97,11 @@ export default ()=>{
         start : "top+=1% top",
         onEnter : ()=>{
             $('.header').addClass('hide');
+            $('#top').removeClass('hide');
         },
         onLeaveBack : ()=>{
             $('.header').removeClass('hide');
+            $('#top').addClass('hide');
         }
     })
 

@@ -26,6 +26,10 @@ export const cursorPoint = (e)=>{
     })
 }
 
+$('#top').click(function(){
+    gsap.to(window,{duration : 1, scrollTo: 0});
+});
+
 $(window).on('mousemove',cursorPoint);
 
 window.addEventListener('DOMContentLoaded',function(){

@@ -29,6 +29,10 @@
     </div>
 </div>
 
+<div id="top" class="hide">
+    TOP
+</div>
+
 <script type="module" src="/js/kjy/main/index.js"></script>
 
 <?php 

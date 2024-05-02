@@ -1,7 +1,5 @@
 "use strict"
 
-import { isDesktop, isMobile } from "../../constant/responsive.js";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default ()=>{
@@ -21,9 +19,7 @@ export default ()=>{
 
     const mm = gsap.matchMedia();
 
-    mm.add({isDesktop,isMobile},(context)=>{
-
-        const {isDesktop} = context.conditions;
+    mm.add("(min-width:821px)",()=>{
 
         const tl = gsap.timeline({
             scrollTrigger : {
@@ -36,12 +32,33 @@ export default ()=>{
             }
         });
     
-        $('._main .section04 .tbx p span').each((i,e)=>{
+        $('._main .section04 .tbx.pc p span').each((i,e)=>{
             tl.from(e,{
                 clipPath: "inset(0% 100% 0% 0%)"
             })
         });
 
-    })
+    });
+
+    mm.add("(max-width:820px)",()=>{
+
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .section04",
+                start : "top top",
+                pin : true,
+                // pinType : isDesktop ? "transform" : "fixed",
+                scrub : true,
+                end : "+=300%"
+            }
+        });
+    
+        $('._main .section04 .tbx.mob p span').each((i,e)=>{
+            tl.from(e,{
+                clipPath: "inset(0% 100% 0% 0%)"
+            })
+        });
+
+    });
     
 }

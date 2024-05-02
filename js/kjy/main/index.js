@@ -28,9 +28,11 @@ export const cursorPoint = (e)=>{
 
 $(window).on('mousemove',cursorPoint);
 
-section01();
-section02();
-section03();
-section04();
-section05();
-section06();
+window.addEventListener('DOMContentLoaded',function(){
+    section01();
+    section02();
+    section03();
+    section04();
+    section05();
+    section06();
+});

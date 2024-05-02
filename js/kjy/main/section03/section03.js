@@ -86,40 +86,63 @@ export default ()=>{
 
 
     const mm = gsap.matchMedia();
-
     mm.add({
-        isDesktop
-    },()=>{
+        min1281 : "(min-width:1281px)",
+        min1025 : "(min-width:1025px)",
+        min821 : "(min-width:821px)",
+    },(context)=>{
+
+        const {min1281,min1025,min821} = context.conditions;
 
         $('._main .section03 .layout').each((_,e)=>{
 
             if($(e).hasClass("left")){
     
                 gsap.fromTo($(e).find('.flex .swiper'),{
-                    xPercent : -30,
+                    x : ()=>{
+                        if(min1281){
+                            return -416
+                        }
+                        if(min1025){
+                            return -326
+                        }
+                        if(min821){
+                            return -246
+                        }
+                    },
                 },{
-                    xPercent : 0,
+                    x : 0,
                     scrollTrigger : {
                         trigger : e,
                         start : "top center",
                         end : "center center",
                         scrub : 1,
                     }
-                })
+                });
     
             }else{
     
                 gsap.fromTo($(e).find('.flex .swiper'),{
-                    xPercent : 30,
+                    x : ()=>{
+                        if(min1281){
+                            return 416
+                        }
+                        if(min1025){
+                            return 326
+                        }
+                        if(min821){
+                            return 246
+                        }
+                    },
                 },{
-                    xPercent : 0,
+                    x : 0,
                     scrollTrigger : {
                         trigger : e,
                         start : "top center",
                         end : "center center",
                         scrub : 1,
                     }
-                })
+                });
     
             }
     
@@ -138,6 +161,10 @@ export default ()=>{
 
         const {min821,max820,min1025,min1281} = context.conditions;
 
+        gsap.set('._main .section03 .cursor',{
+            width : 32,
+        })
+
         ScrollTrigger.create({
             trigger : "._main .section03",
             start : "top center",
@@ -146,29 +173,35 @@ export default ()=>{
                 $(window).off('mousemove',cursorPoint);
     
                 gsap.set('._main .section03 .cursor',{
-                    opacity : 1,
                     left : ()=>{
                         return parseInt($('.cursor-point').css('left'));
                     },
                     top  : ()=>{
                         return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
-                    }
+                    },
+                    yPercent : -50,
                 });
+
+                gsap.to('._main .section03 .cursor',{
+                    width : 32,
+                    opacity : 1,
+                    duration : 0
+                })
     
                 gsap.timeline({
                     defaults : {
                         immediateRender: false,
+                        ease : "none"
                     },
                 })
-                .fromTo('._main .section03 .cursor',{
-                    width : 32,
-                },{
+                .to('._main .section03 .cursor',{
                     width : ()=>{
                         if(min1281) return 531;
                         if(min1025) return 401;
                         if(min821) return 261;
                         if(max820) return 201;
                     },
+                    duration : 1,
                 },'a')
                 .to('._main .section03 .cursor',{
                     left : ()=>{
@@ -178,21 +211,15 @@ export default ()=>{
                     top : ()=>{
                         return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
                     },
-                    yPercent : -50,
+                    duration : 1,
                 },'a');
     
             },
             onLeaveBack : ()=>{
                 $('.cursor-point').show();
     
-                gsap.set('._main .section03 .cursor',{
+                gsap.to('._main .section03 .cursor',{
                     opacity : 0,
-                    left : ()=>{
-                        return 0;
-                    },
-                    top  : ()=>{
-                        return 0;
-                    }
                 });
     
                 $(window).on('mousemove',cursorPoint);

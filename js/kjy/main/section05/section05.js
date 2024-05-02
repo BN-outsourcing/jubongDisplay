@@ -8,7 +8,6 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .section05",
-        // markers : true,
         start : "top top",
         invalidateOnRefresh : true,
         onEnter : ()=>{
@@ -17,6 +16,7 @@ export default ()=>{
         onLeaveBack : ()=>{
             $('.header').addClass("on");
         }
+        // markers : true,
     });
 
 
@@ -27,7 +27,7 @@ export default ()=>{
         isMobile
     },(context)=>{
 
-        const {isDesktop,isMobile} = context.conditions;
+        // const {isDesktop,isMobile} = context.conditions;
 
         $('._main .section05 .grid .col').each((_,e)=>{
 
@@ -42,7 +42,7 @@ export default ()=>{
     
         });
     
-        const ab = gsap.timeline({
+        /* const ab = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .section05",
                 start : "top-=15% center",
@@ -50,28 +50,22 @@ export default ()=>{
                 scrub : true,
                 // markers : true
             }
-        })
-    
-        ab.fromTo('._main .section05 .grid',{
-            yPercent : 75,
-            z : -2000
-        },{
-            yPercent : 0,
-            z : 0
-        });
+        }) */
     
 
         const tl = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .section05",
                 start : "top top",
-                // start : isDesktop ? "top top+=25%" : "top top",
-                end : "+=300%",
-                // end : "bottom center",
+                end : "+=400%",
                 pin : true,
+                scrub : 1,
+                // invalidateOnRefresh : true,
+                // start : isDesktop ? "top top+=25%" : "top top",
+                // end : "bottom center",
                 /* 
                 pinSpacing : true, */
-                scrub : true,
+                
                 // markers : true
             }
         });
@@ -79,8 +73,17 @@ export default ()=>{
         $('._main .section05 .tbx dd .p span').each((i,e)=>{
             tl.to(e,{
                 clipPath: "inset(0% 0% 0% 0%)"
-            },i === 0 ? 'a' : "a+=50%");
+            },i === 0 ? 'c' : "c+=50%");
         })
+
+        tl.fromTo('._main .section05 .grid',{
+            yPercent : 50,
+            z : -1500
+        },{
+            yPercent : 0,
+            z : 0,
+            duration : 1.5
+        },'c');
         
         $('._main .section05 .grid .col').each((_,e)=>{
     
@@ -89,7 +92,9 @@ export default ()=>{
                 scaleY : 1,
                 xPercent : 0,
                 yPercent : 0,
-            },'a');
+                duration : 1.5,
+                ease : "none"
+            },'a+=20%');
     
         });
     
@@ -100,8 +105,10 @@ export default ()=>{
         },{
             z : 7000,
             yPercent : -20,
-            scale : 1.2
-        },'a');
+            scale : 1.2,
+            duration : 1.5,
+            ease : "none"
+        },'a+=20%');
 
     })
 

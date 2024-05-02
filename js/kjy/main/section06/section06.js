@@ -10,7 +10,7 @@ export default ()=>{
         trigger : "._main .section06",
         // markers : true,
         start : "top top",
-        invalidateOnRefresh : true,
+        // invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').addClass("on");
         },
@@ -60,16 +60,19 @@ export default ()=>{
                     },
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 400px top -20px'
+                    backgroundPosition: 'left 600px top 60px'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 800px top -20px'
+                    backgroundPosition: 'left 1200px top 30px'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 1200px top -40px'
+                    backgroundPosition: 'left 1800px top 0'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: isDesktop ? 'left 1800px top -60px' : 'left 1800px top -80px'
+                    backgroundPosition: 'left 2400px top -30px'
+                })
+                .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
+                    backgroundPosition: isDesktop ? 'left 2800px top -60px' : 'left 2800px top -80px'
                 })
     
             }

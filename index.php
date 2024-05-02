@@ -20,10 +20,12 @@
                 include_once $_SERVER["DOCUMENT_ROOT"]."/components/main/section04.html";
                 include_once $_SERVER["DOCUMENT_ROOT"]."/components/main/section05.html";
                 include_once $_SERVER["DOCUMENT_ROOT"]."/components/main/section06.html";
-                include_once $_SERVER["DOCUMENT_ROOT"]."/components/layout/_footer.html";
             ?>
             
         </main>  
+        <?php
+            include_once $_SERVER["DOCUMENT_ROOT"]."/components/layout/_footer.html";
+        ?>
     </div>
 </div>
 

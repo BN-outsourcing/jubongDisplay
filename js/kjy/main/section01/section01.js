@@ -1,6 +1,6 @@
 "use strict"
 
-import { useIsMobile } from "../../constant/responsive.js";
+import { isDesktop, isMobile, useIsMobile } from "../../constant/responsive.js";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -34,33 +34,50 @@ export default ()=>{
             }
         }
     });
+
     
-    gsap.from('.section01 .move',{
-        clipPath: "circle(0% at 50% 50%)",
-        delay : 0.5,
-        duration : 2,
-        onStart : ()=>{
-            gsap.timeline()
-            .fromTo('._main .section01 .move h1',{
-                y : 100,
-                opacity : 0
-            },{
-                y : 0,
-                opacity : 1
-            })
-            .fromTo('._main .section01 .move .up_scale',{
-                y : 100,
-                opacity : 0
-            },{
-                y : 0,
-                opacity : 1
-            });
-        },
-        onComplete : ()=>{
-            $('html').css('overflow-y','auto');
-            swiper.params.touchRatio = 1;
-        }
-    })
+    const intro = gsap.matchMedia();
+
+    intro.add({
+        isDesktop,
+        isMobile
+    },(context)=>{
+
+        const { isDesktop } = context.conditions;
+
+        gsap.from('.section01 .move',{
+            clipPath: "circle(0% at 50% 50%)",
+            delay : isDesktop ? 0.8 : 0,
+            duration : 3,
+            onStart : ()=>{
+                gsap.timeline({})
+                .fromTo('._main .section01 .move h1',{
+                    y : 100,
+                    opacity : 0
+                },{
+                    y : 0,
+                    opacity : 1,
+                    duration : 0.8
+                })
+                .fromTo('._main .section01 .move .up_scale',{
+                    y : 100,
+                    opacity : 0
+                },{
+                    y : 0,
+                    opacity : 1,
+                    duration : 0.8
+                });
+            },
+            onComplete : ()=>{
+                $('html').css('overflow-y','auto');
+                $('.header').removeClass('hide');
+                swiper.params.touchRatio = 1;
+            }
+        })
+
+    });
+
+
 
     $('.section01 .move .up_scale .movie_video ul li').each((i,e)=>{
         gsap.set(e,{
@@ -68,6 +85,20 @@ export default ()=>{
             opacity : 0
         })
     });
+
+
+    ScrollTrigger.create({
+        trigger : "html",
+        // markers : true,
+        start : "top+=1% top",
+        onEnter : ()=>{
+            $('.header').addClass('hide');
+        },
+        onLeaveBack : ()=>{
+            $('.header').removeClass('hide');
+        }
+    })
+
 
     const mm = gsap.matchMedia();
 
@@ -88,28 +119,35 @@ export default ()=>{
                 // markers : true,
                 pin : true,
                 // pinType : isDesktop ? "transform" : "fixed",
-                scrub : true,
-                end : "+=200%"
-            }
+                scrub : 1,
+                end : "+=500%",
+            },
         })
         .to('.section01 .move h1',{
             opacity : 0,
-            duration : 0.5
+            duration : 1
         },'a')
         .to('.section01 .move .up_scale .scrollDown',{
             opacity : 0,
-            duration : 0.5
+            duration : 1
         },'a')
+        /* .fromTo(".section01 .up_scale",{
+            top: ()=>`${700/980*100}%`,
+        },{
+            top: ()=>`10%`,
+        },'a+=25%') */
         .from(".section01 .up_scale",{
             top: ()=>`${700/980*100}%`,
+            duration : 1
         },'a+=25%')
         .from(".section01 .up_scale .movie_video",{
+            duration : 1,
             borderRadius: ()=>{
-                if(min1281) return '220 220 0 0';                
-                if(max480) return '50 50 0 0';
-                if(max820) return '100 100 0 0';
-                if(max1024) return '140 140 0 0';
-                if(max1280) return '170 170 0 0';
+                if(min1281) return '220 220 220 220';                
+                if(max480) return '50 50 50 50';
+                if(max820) return '100 100 100 100';
+                if(max1024) return '140 140 140 140';
+                if(max1280) return '170 170 170 170';
             },
             width : ()=>{
                 if(min821){
@@ -127,7 +165,11 @@ export default ()=>{
                     })
                 });
             }
-        });
+        })
+        .to({},{},"+=1");
+        /* .to('.section01 .up_scale',{
+            top : 0
+        },'b') */
 
     });
 

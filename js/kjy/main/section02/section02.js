@@ -8,8 +8,6 @@ export default ()=>{
         opacity : 0,
     });
 
-    $('.header').addClass("hide");
-
     ScrollTrigger.create({
         trigger : "._main .section02",
         // markers : true,
@@ -17,11 +15,11 @@ export default ()=>{
         invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').addClass("on");
-            $('.header').removeClass("hide");
+            // $('.header').removeClass("hide");
         },
         onLeaveBack : ()=>{
             $('.header').removeClass("on");
-            $('.header').addClass("hide");
+            // $('.header').addClass("hide");
         }
     });
 

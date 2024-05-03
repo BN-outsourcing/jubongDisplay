@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Geologica Roman';
+    src: url('GeologicaRoman-Light.woff2') format('woff2'),
+        url('GeologicaRoman-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geologica Roman';
+    src: url('GeologicaRoman-Regular.woff2') format('woff2'),
+        url('GeologicaRoman-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

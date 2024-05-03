@@ -60,19 +60,19 @@ export default ()=>{
                     },
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 600px top 60px'
+                    backgroundPosition: isDesktop ? 'left 600px top 60px' : 'left 600px top 30px'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 1200px top 30px'
+                    backgroundPosition: isDesktop ? 'left 1200px top 30px' : 'left 1200px top 10px'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 1800px top 0'
+                    backgroundPosition: isDesktop ? 'left 1800px top 0' : 'left 1800px top 0'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: 'left 2400px top -30px'
+                    backgroundPosition: isDesktop ? 'left 2400px top -30px' : 'left 2400px top -10px'
                 })
                 .to('._main .section06 .tbx dl dd p:nth-of-type(2)',{
-                    backgroundPosition: isDesktop ? 'left 2800px top -60px' : 'left 2800px top -80px'
+                    backgroundPosition: isDesktop ? 'left 2800px top -60px' : 'left 2800px top -30px'
                 })
     
             }

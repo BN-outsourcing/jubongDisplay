@@ -74,7 +74,7 @@ export default ()=>{
             },
             onComplete : ()=>{
                 $('html').css('overflow-y','auto');
-                $('.header').removeClass('hide');
+                // $('.header').removeClass('hide');
                 swiper.params.touchRatio = 1;
             }
         })

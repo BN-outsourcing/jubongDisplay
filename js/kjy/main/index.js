@@ -10,7 +10,7 @@ import section06 from "./section06/section06.js";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
-let smoother;
+export let smoother;
 
 if(!useIsMobile()){
     smoother = ScrollSmoother.create({
@@ -26,11 +26,52 @@ export const cursorPoint = (e)=>{
     })
 }
 
+let OFFSET = 0;
+let chk = 0;
+
+export const headerMove = (e)=>{
+    
+    const scrollTo = $(window).scrollTop();
+
+    if(scrollTo >= OFFSET){
+        $('.header').addClass("hide");
+        $('.header .menu').removeClass('on');
+        $('.mob-menu').removeClass('on');
+        chk = 0;
+    }else{
+        $('.header').removeClass("hide");
+    }
+    
+    OFFSET = $(window).scrollTop();
+
+}
+$(window).on('scroll',headerMove);
+$(window).on('mousemove',cursorPoint);
+
+$('.header .menu').click(function(){
+
+    if(chk === 0){
+
+        $(this).addClass('on');
+
+        $('.mob-menu').addClass('on');
+
+        chk = 1;
+
+    }else{
+
+        $(this).removeClass('on');
+        $('.mob-menu').removeClass('on');
+
+        chk = 0;
+
+    }
+
+});
+
 $('#top').click(function(){
     gsap.to(window,{duration : 1, scrollTo: 0});
 });
-
-$(window).on('mousemove',cursorPoint);
 
 window.addEventListener('DOMContentLoaded',function(){
     section01();

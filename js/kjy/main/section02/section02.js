@@ -1,5 +1,7 @@
 "use strict"
 
+import { headerMove } from "../index.js";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default ()=>{
@@ -15,11 +17,12 @@ export default ()=>{
         invalidateOnRefresh : true,
         onEnter : ()=>{
             $('.header').addClass("on");
-            // $('.header').removeClass("hide");
+            $('.header').removeClass("hide");
+            $(window).off('scroll',headerMove);
         },
         onLeaveBack : ()=>{
             $('.header').removeClass("on");
-            // $('.header').addClass("hide");
+            $(window).on('scroll',headerMove);
         }
     });
 

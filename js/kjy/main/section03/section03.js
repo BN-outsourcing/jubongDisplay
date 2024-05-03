@@ -247,7 +247,7 @@ export default ()=>{
             scrollTrigger : {
                 trigger : "._main .section03 .layout.layout1 .flex",
                 endTrigger : "._main .section03 .layout.layout2 .flex",
-                start : "center+=5% center",
+                start : "center+=15% center",
                 end : "center center",
                 // markers : true,
                 scrub : true,
@@ -268,7 +268,7 @@ export default ()=>{
             scrollTrigger : {
                 trigger : "._main .section03 .layout.layout2 .flex",
                 endTrigger : "._main .section03 .layout.layout3 .flex",
-                start : "center+=5% center",
+                start : "center+=15% center",
                 end : "center center",
                 // markers : true,
                 scrub : true,

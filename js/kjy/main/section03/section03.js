@@ -1,6 +1,6 @@
 "use strict"
 
-import { isDesktop } from "../../constant/responsive.js";
+import { isDesktop, isMobile } from "../../constant/responsive.js";
 import { cursorPoint } from "../index.js";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,51 +20,39 @@ export default ()=>{
         }
     });
 
-    ScrollTrigger.create({
-        trigger : "._main .section03 .tbx h1",
-        endTrigger : "._main .section03",
-        start : "top top+=10%",
-        // markers : true,
-        pin : true,
-        pinSpacing : false,
-    });
+    const title = gsap.matchMedia();
 
-    const tl = gsap.timeline({
-        scrollTrigger : {
-            trigger : "._main .section03 .tbx",
-            start : "top bottom-=10%",
-        }
-    });
-
-    $('._main .section03 .tbx p').each((i,e)=>{
-        tl.fromTo($(e).find('span'),{
-            clipPath: "inset(0% 100% 0% 0%)"
-        },{
-            clipPath: "inset(0% 0% 0% 0%)"
-        },i === 0 ? "a" : "a+=50%")
-    });
-
-    
-    /* const cirMm = gsap.matchMedia();
-
-    cirMm.add({
-        min1281 : "(min-width:1281px)",
-        min1025 : "(min-width:1025px)",
-        min821 : "(min-width:821px)",
-        max820 : "(max-width:820px)",
+    title.add({
+        isDesktop : "(min-width:821px)",
+        isMobile : "(max-width:820px)",
     },(context)=>{
+        const {isDesktop} = context.conditions;
 
-        const {max820,min821,min1025,min1281} = context.conditions;
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .section03 .tbx",
+                start : isDesktop ? "top bottom-=10%" : "top bottom-=20%",
+            }
+        });
+    
+        $('._main .section03 .tbx p').each((i,e)=>{
+            tl.fromTo($(e).find('span'),{
+                clipPath: "inset(0% 100% 0% 0%)"
+            },{
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration : 0.8,
+                ease : "none",
+            },i === 0 ? "a" : "a+=50%")
+        });
 
-        
+    });
 
-    }); */
 
-    const slideArr = [];
+    /* const slideArr = [];
 
     $('._main .section03 .flex .swiper').each((_,e)=>{
         const swiper = new Swiper(e,{
-            effect : 'fade',
+            // effect : 'fade',
         });
         slideArr.push(swiper);
     });
@@ -82,75 +70,127 @@ export default ()=>{
 
         });
 
-    });
+    }); */
+
+    
 
 
-    const mm = gsap.matchMedia();
-    mm.add({
-        min1281 : "(min-width:1281px)",
-        min1025 : "(min-width:1025px)",
-        min821 : "(min-width:821px)",
-    },(context)=>{
+    const slide = gsap.matchMedia();
 
-        const {min1281,min1025,min821} = context.conditions;
+    slide.add("(min-width:821px)",()=>{
 
-        $('._main .section03 .layout').each((_,e)=>{
+        /* gsap.utils.toArray('._main .section03 .layoutbox').forEach((e)=>{
 
-            if($(e).hasClass("left")){
+            ScrollTrigger.create({
+                trigger : $(e).find('.layout:not(.opacity)'),
+                // endTrigger : $(e).find('.layout.opacity'), 
+                start : "center center",
+                // end : "center center",
+                // markers : true,
+                pin : true,
+                // pinSpacing : false
+            })
+
+        });
+
+        ScrollTrigger.create({
+            trigger : "._main .section03",
+            // markers : true,
+        }) */
+
+        $('._main .section03 .layout:not(.opacity) .flex').each((_,e)=>{
+
+            const trigger = e;
     
-                gsap.fromTo($(e).find('.flex .swiper'),{
-                    x : ()=>{
-                        if(min1281){
-                            return -416
-                        }
-                        if(min1025){
-                            return -326
-                        }
-                        if(min821){
-                            return -246
-                        }
-                    },
-                },{
-                    x : 0,
-                    scrollTrigger : {
-                        trigger : e,
-                        start : "top center",
-                        end : "center center",
-                        scrub : 1,
-                    }
-                });
+            const tl = gsap.timeline({
+                scrollTrigger : {
+                    trigger,
+                    start : "center center",
+                    pin : true,
+                    scrub : 1,
+                    // endTrigger : $(e).parent().siblings(),
+                    // end : "center center",
+                    // markers : true,
+                    // pinSpacing : false,
+                }
+            });
     
-            }else{
+            $(e).find('.swiper-slide').each((index,e)=>{
     
-                gsap.fromTo($(e).find('.flex .swiper'),{
-                    x : ()=>{
-                        if(min1281){
-                            return 416
-                        }
-                        if(min1025){
-                            return 326
-                        }
-                        if(min821){
-                            return 246
-                        }
-                    },
-                },{
-                    x : 0,
-                    scrollTrigger : {
-                        trigger : e,
-                        start : "top center",
-                        end : "center center",
-                        scrub : 1,
-                    }
-                });
+                if(index === 0){
     
-            }
+                    const tl = gsap.timeline({
+                        scrollTrigger : {
+                            trigger,
+                            start : "top bottom",
+                            end : "center center",
+                            // markers : true,
+                            scrub : 1,
+                            invalidateOnRefresh : true,
+                        }
+                    });
     
+                    tl.fromTo(e,{
+                        x : ()=>{
+
+                            if($(trigger).parents('.layout').hasClass('left')){
+                                return "-102%";
+                            }else{
+                                return "102%";
+                            }
+
+                        },
+                    },{
+                        x : 0,
+                        ease : "none"
+                    })
+    
+                }else{
+    
+                    tl.fromTo(e,{
+                        x : ()=>{
+                            if($(trigger).parents('.layout').hasClass('left')){
+                                return "-102%";
+                            }else{
+                                return "102%";
+                            }
+                        }
+                    },{
+                        x : 0,
+                        ease : "none"
+                    });
+    
+                }
+    
+            });
+    
+        });
+
+        ScrollTrigger.create({
+            trigger : "._main .section03 .tbx h1",
+            endTrigger : "._main .section03",
+            start : "top top+=10%",
+            end : "bottom bottom-=2.5%",
+            // markers : true,
+            pin : true,
+            pinSpacing : false,
         });
 
     });
 
-    const mm2 = gsap.matchMedia();
+    
+
+    ScrollTrigger.create({
+        trigger : "._main .section03 .cursor",
+        endTrigger : "._main .section03",
+        start : "center center",
+        // markers : true,
+        pin : true,
+        pinSpacing : false
+    })
+
+
+    /* const mm2 = gsap.matchMedia();
 
     mm2.add({
         min1281 : "(min-width:1281px)",
@@ -276,6 +316,118 @@ export default ()=>{
             }
         });
 
+    }); */
+
+
+    
+    /* const cirMm = gsap.matchMedia();
+
+    cirMm.add({
+        min1281 : "(min-width:1281px)",
+        min1025 : "(min-width:1025px)",
+        min821 : "(min-width:821px)",
+        max820 : "(max-width:820px)",
+    },(context)=>{
+
+        const {max820,min821,min1025,min1281} = context.conditions;
+
+        
+
+    }); */
+
+/*     const slideArr = [];
+
+    $('._main .section03 .flex .swiper').each((_,e)=>{
+        const swiper = new Swiper(e,{
+            effect : 'fade',
+        });
+        slideArr.push(swiper);
     });
+
+    $('._main .section03 .flex .box ul').each((i,e)=>{
+
+        $(e).find('li').each((_,e)=>{
+
+            $(e).find('div').mouseover(function(){
+                const index = $(this).parent().index();
+                $(this).parent().siblings().removeClass('act');
+                $(this).parent().addClass('act');
+                slideArr[i].slideTo(index);
+            });
+
+        });
+
+    });
+ */
+
+    /* const mm = gsap.matchMedia();
+    mm.add({
+        min1281 : "(min-width:1281px)",
+        min1025 : "(min-width:1025px)",
+        min821 : "(min-width:821px)",
+    },(context)=>{
+
+        const {min1281,min1025,min821} = context.conditions;
+
+        $('._main .section03 .layout').each((_,e)=>{
+
+            if($(e).hasClass("left")){
+    
+                gsap.fromTo($(e).find('.flex .swiper'),{
+                    x : ()=>{
+                        if(min1281){
+                            return -416
+                        }
+                        if(min1025){
+                            return -326
+                        }
+                        if(min821){
+                            return -246
+                        }
+                    },
+                },{
+                    x : 0,
+                    scrollTrigger : {
+                        trigger : e,
+                        start : "top center",
+                        end : "center center",
+                        scrub : 1,
+                    }
+                });
+    
+            }else{
+    
+                gsap.fromTo($(e).find('.flex .swiper'),{
+                    x : ()=>{
+                        if(min1281){
+                            return 416
+                        }
+                        if(min1025){
+                            return 326
+                        }
+                        if(min821){
+                            return 246
+                        }
+                    },
+                },{
+                    x : 0,
+                    scrollTrigger : {
+                        trigger : e,
+                        start : "top center",
+                        end : "center center",
+                        scrub : 1,
+                    }
+                });
+    
+            }
+    
+        });
+
+    }); */
+
+
+
+    
+
 
 }

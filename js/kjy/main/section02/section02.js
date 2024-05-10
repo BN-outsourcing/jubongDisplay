@@ -54,6 +54,108 @@ export default ()=>{
 
         const {min1281,min1025,min821,min481,max480} = context.conditions;
 
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .section02",
+                start : "top center",
+                // markers : true,
+                invalidateOnRefresh : true,
+            }
+        })
+        .fromTo('._main .section02 .tbx h1',{
+            yPercent : 50,
+            opacity : 0
+        },{
+            yPercent : 0,
+            opacity : 1,
+        },'a')
+        .fromTo('._main .section02 .tbx h1',{
+            fontSize : ()=>{
+                if(min1281){
+                    return 82
+                }else if(min1025){
+                    return 72;
+                }else if(min821){
+                    return 62;
+                }else if(min481){
+                    return 62;
+                }else if(max480){
+                    return 52;
+                }
+            }
+        },{
+            fontSize : ()=>{
+                if(min1281){
+                    return 52;
+                }else if(min1025){
+                    return 42;
+                }else if(min821){
+                    return 32;
+                }else if(min481){
+                    return 42;
+                }else if(max480){
+                    return 32;
+                }
+            }
+        },'a')
+        .fromTo('._main .section02 .tbx a',{
+            marginTop : "-50%",
+        },{
+            marginTop : '1.7777777778em',
+        })
+        .fromTo('._main .section02 .tbx a',{
+            opacity : 0,
+        },{
+            opacity : 1,
+        })
+        .fromTo('._main .section02 .flex .left',{
+            opacity : 0
+        },{
+            opacity : 1
+        },'b')
+        .fromTo('._main .section02 .flex .right',{
+            opacity : 0
+        },{
+            opacity : 1
+        },'b');
+
+    });
+
+
+    $('._main .section02 .tbx a').mouseover(function(){
+        
+        gsap.to('.cursor-point',{
+            opacity : 0,
+        });
+
+    });
+
+    $('._main .section02 .tbx a').mouseleave(function(){
+        
+        gsap.to('.cursor-point',{
+            opacity : 1,
+        });
+
+    });
+
+}
+
+
+
+
+/* 
+    const mm = gsap.matchMedia();
+
+    mm.add({
+        min1281 : "(min-width: 1281px)",
+        min1025 : "(min-width: 1025px)",
+        min821 : "(min-width: 821px)",
+        min481 : "(min-width: 481px)",
+        max480 : "(max-width: 480px)"
+    },(context)=>{
+
+        const {min1281,min1025,min821,min481,max480} = context.conditions;
+
         gsap.fromTo('._main .section02 .tbx h1',{
             yPercent : 50,
             opacity : 0
@@ -177,22 +279,5 @@ export default ()=>{
             duration : 3,
         },'a');
 
-    })
-
-    $('._main .section02 .tbx a').mouseover(function(){
-        
-        gsap.to('.cursor-point',{
-            opacity : 0,
-        });
-
-    });
-
-    $('._main .section02 .tbx a').mouseleave(function(){
-        
-        gsap.to('.cursor-point',{
-            opacity : 1,
-        });
-
-    });
-
-}
+    }) 
+*/

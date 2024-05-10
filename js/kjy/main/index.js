@@ -69,10 +69,6 @@ $('.header .menu').click(function(){
 
 });
 
-$('#top').click(function(){
-    gsap.to(window,{duration : 1, scrollTo: 0});
-});
-
 window.addEventListener('DOMContentLoaded',function(){
     section01();
     section02();

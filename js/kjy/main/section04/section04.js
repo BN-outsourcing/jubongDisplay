@@ -24,18 +24,19 @@ export default ()=>{
         const tl = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .section04",
-                start : "top top",
-                pin : true,
+                start : "top center",
+                // markers : true,
+                // pin : true,
                 // pinType : isDesktop ? "transform" : "fixed",
-                scrub : true,
-                end : "+=300%"
+                // scrub : true,
+                // end : "+=300%"
             }
         });
     
         $('._main .section04 .tbx.pc p span').each((i,e)=>{
             tl.from(e,{
                 clipPath: "inset(0% 100% 0% 0%)"
-            })
+            },i === 0 ? "a" : "a+=75%")
         });
 
     });
@@ -45,11 +46,11 @@ export default ()=>{
         const tl = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .section04",
-                start : "top top",
-                pin : true,
+                start : "top center",
+                // pin : true,
                 // pinType : isDesktop ? "transform" : "fixed",
-                scrub : true,
-                end : "+=300%"
+                // scrub : true,
+                // end : "+=300%"
             }
         });
     

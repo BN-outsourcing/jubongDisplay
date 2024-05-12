@@ -20,8 +20,8 @@ export default ()=>{
         }
     });
 
+    // 색상채워짐
     const title = gsap.matchMedia();
-
     title.add({
         isDesktop : "(min-width:821px)",
         isMobile : "(max-width:820px)",
@@ -47,71 +47,52 @@ export default ()=>{
 
     });
 
-
-    /* const slideArr = [];
-
-    $('._main .section03 .flex .swiper').each((_,e)=>{
-        const swiper = new Swiper(e,{
-            // effect : 'fade',
-        });
-        slideArr.push(swiper);
-    });
-
-    $('._main .section03 .flex .box ul').each((i,e)=>{
-
-        $(e).find('li').each((_,e)=>{
-
-            $(e).find('div').mouseover(function(){
-                const index = $(this).parent().index();
-                $(this).parent().siblings().removeClass('act');
-                $(this).parent().addClass('act');
-                slideArr[i].slideTo(index);
-            });
-
-        });
-
-    }); */
-
-    
-
-
+    let slideArr = [];
     const slide = gsap.matchMedia();
 
-    slide.add("(min-width:821px)",()=>{
+    slide.add({
+        min1481 : "(min-width:1481px)",
+        min1281 : "(min-width:1281px)",
+        min821 : "(min-width:821px)"
+    },(context)=>{
 
-        /* gsap.utils.toArray('._main .section03 .layoutbox').forEach((e)=>{
+        // const {min1481,min1281,min821} = context.conditions;
 
-            ScrollTrigger.create({
-                trigger : $(e).find('.layout:not(.opacity)'),
-                // endTrigger : $(e).find('.layout.opacity'), 
-                start : "center center",
-                // end : "center center",
-                // markers : true,
-                pin : true,
-                // pinSpacing : false
-            })
-
-        });
-
+        // Product 따라옴
         ScrollTrigger.create({
-            trigger : "._main .section03",
+            trigger : "._main .section03 .tbx h1",
+            endTrigger : "._main .section03",
+            start : "top top+=7.5%",
+            // start : "center center",
+            end : "bottom bottom-=2.5%",
             // markers : true,
-        }) */
-
-        $('._main .section03 .layout:not(.opacity) .flex').each((_,e)=>{
+            pin : true,
+            pinSpacing : false,
+        });
+        
+        // 슬라이드
+        if(slideArr.length > 0){
+            slideArr.forEach((elm,_)=>{
+                elm.destroy();
+            })
+            slideArr = [];
+        }
+        
+        $('._main .section03 .layout').each((_,e)=>{
 
             const trigger = e;
     
             const tl = gsap.timeline({
                 scrollTrigger : {
                     trigger,
+                    endTrigger : $(e).siblings(),
                     start : "center center",
+                    end : "bottom bottom-=15%",
+                    // end : "bottom bottom",
                     pin : true,
-                    scrub : 1,
-                    // endTrigger : $(e).parent().siblings(),
-                    // end : "center center",
+                    scrub : 1.5,
                     // markers : true,
-                    // pinSpacing : false,
+                    pinSpacing : false,
                 }
             });
     
@@ -132,32 +113,43 @@ export default ()=>{
     
                     tl.fromTo(e,{
                         x : ()=>{
-
-                            if($(trigger).parents('.layout').hasClass('left')){
-                                return "-102%";
+                            if($(trigger).hasClass('left')){
+                                return "-105%";
                             }else{
-                                return "102%";
+                                return "105%";
                             }
-
-                        },
+                        }
                     },{
                         x : 0,
-                        ease : "none"
+                        ease : "none",
+                        onStart : ()=>{
+                            $(trigger).find(".box ul li").removeClass('act');
+                            $(trigger).find(".box ul li").eq(index).addClass('act');
+                        }
                     })
     
                 }else{
     
                     tl.fromTo(e,{
                         x : ()=>{
-                            if($(trigger).parents('.layout').hasClass('left')){
-                                return "-102%";
+                            if($(trigger).hasClass('left')){
+                                return "-105%";
                             }else{
-                                return "102%";
+                                return "105%";
                             }
                         }
                     },{
                         x : 0,
-                        ease : "none"
+                        ease : "none",
+                        onStart : ()=>{
+                            $(trigger).find(".box ul li").removeClass('act');
+                            $(trigger).find(".box ul li").eq(index).addClass('act');
+                        },
+                        onReverseComplete : ()=>{
+                            console.log(index);
+                            $(trigger).find(".box ul li").removeClass('act');
+                            $(trigger).find(".box ul li").eq(index-1).addClass('act');
+                        }
                     });
     
                 }
@@ -166,268 +158,173 @@ export default ()=>{
     
         });
 
-        ScrollTrigger.create({
-            trigger : "._main .section03 .tbx h1",
-            endTrigger : "._main .section03",
-            start : "top top+=10%",
-            end : "bottom bottom-=2.5%",
-            // markers : true,
-            pin : true,
-            pinSpacing : false,
+    })
+    
+    slide.add("(max-width:820px)",()=>{
+        $('._main .section03 .swiper').each((_,e)=>{
+            const swiper = new Swiper(e,{
+                effect : 'fade',
+                on : {
+                    slideChange : (swiper)=>{
+                        const real = swiper.realIndex;
+                        $(e).siblings('.box').find("li").removeClass('act');
+                        $(e).siblings('.box').find("li").eq(real).addClass('act');
+                    }
+                }
+            });
+            slideArr.push(swiper);
+        });
+
+        $('._main .section03 .layout .box ul').each((i,e)=>{
+
+            $(e).find('li').each((_,e)=>{
+    
+                $(e).find('div').mouseover(function(){
+                    const index = $(this).parent().index();
+                    $(this).parent().siblings().removeClass('act');
+                    $(this).parent().addClass('act');
+                    slideArr[i].slideTo(index);
+                });
+    
+            });
+    
         });
 
     });
 
-    
 
-    ScrollTrigger.create({
-        trigger : "._main .section03 .cursor",
-        endTrigger : "._main .section03",
-        start : "center center",
-        // markers : true,
-        pin : true,
-        pinSpacing : false
-    })
-
-
-    /* const mm2 = gsap.matchMedia();
-
-    mm2.add({
-        min1281 : "(min-width:1281px)",
-        min1025 : "(min-width:1025px)",
+    // 원 관련
+    const circle = gsap.matchMedia();
+    circle.add({
         min821 : "(min-width:821px)",
         max820 : "(max-width:820px)",
     },(context)=>{
 
-        const {min821,max820,min1025,min1281} = context.conditions;
-
-        gsap.set('._main .section03 .cursor',{
-            width : 32,
-        })
+        const {min821,max820} = context.conditions;
 
         ScrollTrigger.create({
-            trigger : "._main .section03",
+            trigger : "._main .section03 .poa .cir",
+            endTrigger : "._main .section03",
+            start : "center center",
+            end : "bottom bottom",
+            // markers : true
+            pin : true,
+            pinSpacing : false
+        });
+
+        ScrollTrigger.create({
+            trigger : '._main .section03',
+            endTrigger : "._main .section03 .layout.layout1",
             start : "top center",
+            end : "center bottom",
+            // markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
+            // scrub : min821 ? true : 1,
             onEnter : ()=>{
                 $('.cursor-point').hide();
                 $(window).off('mousemove',cursorPoint);
-    
-                gsap.set('._main .section03 .cursor',{
+                let x = parseInt($('.cursor-point').css('left'))*100 / window.innerWidth;
+                let y = parseInt($('.cursor-point').css('top'))*100 / window.innerWidth;
+                gsap.fromTo('._main .section03 .poa .cir .curb',{
                     left : ()=>{
-                        return parseInt($('.cursor-point').css('left'));
-                    },
-                    top  : ()=>{
-                        return parseInt($('.cursor-point').css("top")) - $('._main .section03')[0].getBoundingClientRect().top ;
-                    },
-                    yPercent : -50,
-                });
-
-                gsap.to('._main .section03 .cursor',{
-                    width : 32,
-                    opacity : 1,
-                    duration : 0
-                })
-    
-                gsap.timeline({
-                    defaults : {
-                        immediateRender: false,
-                        ease : "none"
-                    },
-                })
-                .to('._main .section03 .cursor',{
-                    width : ()=>{
-                        if(min1281) return 531;
-                        if(min1025) return 401;
-                        if(min821) return 261;
-                        if(max820) return 201;
-                    },
-                    duration : 1,
-                },'a')
-                .to('._main .section03 .cursor',{
-                    left : ()=>{
-                        if(min821) return "80%"
-                        if(max820) return "90%"
+                        return `${x}vw`;
                     },
                     top : ()=>{
-                        return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
+                        return `${-y}vw`;
                     },
-                    duration : 1,
-                },'a');
-    
+                    marginLeft : min821 ? "0%" : "0",
+                    yPercent : min821 ? -50 : 0
+                },{
+                    left : min821 ? "80%" : "0",
+                    top : "50%",
+                    marginLeft : min821 ? "0%" : "90%",
+                    yPercent : min821 ? -50 : 0,
+                    duration : min821 ? 1 : 0,
+                });
             },
             onLeaveBack : ()=>{
                 $('.cursor-point').show();
-    
-                gsap.to('._main .section03 .cursor',{
-                    opacity : 0,
-                });
-    
                 $(window).on('mousemove',cursorPoint);
             }
         });
 
-        gsap.fromTo('._main .section03 .cursor',{
-            left : ()=>{
-                if(min821) return "80%"
-                if(max820) return "90%"
-            },
-            top : ()=>{
-                return ($('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout1 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
-            },
-        },{
-            left : ()=>{
-                if(min821) return "-10%";
-                if(max820) return "-20%";
-            },
-            top : ()=>{
-                return ($('._main .section03 .layout.layout2 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout2 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
-            },
-            yPercent : -50,
-            immediateRender: false,
-            scrollTrigger : {
-                trigger : "._main .section03 .layout.layout1 .flex",
-                endTrigger : "._main .section03 .layout.layout2 .flex",
-                start : "center+=15% center",
-                end : "center center",
-                // markers : true,
-                scrub : true,
-                invalidateOnRefresh : true,
-            }
-        });
+        if(min821){
 
-        gsap.to('._main .section03 .cursor',{
-            left : ()=>{
-                if(min821) return "80%";
-                if(max820) return "90%";
-            },
-            top : ()=>{
-                return ($('._main .section03 .layout.layout3 .flex')[0].getBoundingClientRect().top + $('._main .section03 .layout.layout3 .flex')[0].getBoundingClientRect().height/2) - $('._main .section03')[0].getBoundingClientRect().top;
-            },
-            yPercent : -50,
-            immediateRender: false,
-            scrollTrigger : {
-                trigger : "._main .section03 .layout.layout2 .flex",
-                endTrigger : "._main .section03 .layout.layout3 .flex",
-                start : "center+=15% center",
-                end : "center center",
-                // markers : true,
-                scrub : true,
-                invalidateOnRefresh : true,
-            }
-        });
+            $('._main .section03 .layoutbox').each((index,elm)=>{
 
-    }); */
+                if(index === 0) return;
 
-
+                gsap.fromTo('._main .section03 .poa .cir .curb',{
     
-    /* const cirMm = gsap.matchMedia();
+                    left : ()=>{
+                        if(index === 1){
+                            return "80%";
+                        }else if(index === 2){
+                            return "-10%";
+                        }
+                    },
+    
+                },{
+                    left : ()=>{
+                        if(index === 1){
+                            return "-10%";
+                        }else if(index === 2){
+                            return "80%";
+                        }
+                    },
+                    immediateRender : false,
+                    scrollTrigger : {
+                        trigger : elm,
+                        start : "top center",
+                        end : "center bottom",
+                        /* markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20}, */
+                        scrub : 1,
+                    }
+                });
+    
+            });
 
-    cirMm.add({
-        min1281 : "(min-width:1281px)",
-        min1025 : "(min-width:1025px)",
-        min821 : "(min-width:821px)",
-        max820 : "(max-width:820px)",
-    },(context)=>{
+        }
 
-        const {max820,min821,min1025,min1281} = context.conditions;
+        if(max820){
+
+            $('._main .section03 .layoutbox').each((index,elm)=>{
+
+                if(index === 0) return;
+
+                gsap.fromTo('._main .section03 .poa .cir .curb',{
+    
+                    marginLeft : ()=>{
+                        if(index === 1){
+                            return "90%";
+                        }else if(index === 2){
+                            return "-10%";
+                        }
+                    },
+    
+                },{
+                    marginLeft : ()=>{
+                        if(index === 1){
+                            return "-10%";
+                        }else if(index === 2){
+                            return "90%";
+                        }
+                    },
+                    immediateRender : false,
+                    scrollTrigger : {
+                        trigger : elm,
+                        start : "top-=25% center",
+                        end : "center center",
+                        // markers: {startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20},
+                        scrub : 1,
+                    }
+                });
+    
+            });
+
+        }
 
         
 
-    }); */
-
-/*     const slideArr = [];
-
-    $('._main .section03 .flex .swiper').each((_,e)=>{
-        const swiper = new Swiper(e,{
-            effect : 'fade',
-        });
-        slideArr.push(swiper);
     });
-
-    $('._main .section03 .flex .box ul').each((i,e)=>{
-
-        $(e).find('li').each((_,e)=>{
-
-            $(e).find('div').mouseover(function(){
-                const index = $(this).parent().index();
-                $(this).parent().siblings().removeClass('act');
-                $(this).parent().addClass('act');
-                slideArr[i].slideTo(index);
-            });
-
-        });
-
-    });
- */
-
-    /* const mm = gsap.matchMedia();
-    mm.add({
-        min1281 : "(min-width:1281px)",
-        min1025 : "(min-width:1025px)",
-        min821 : "(min-width:821px)",
-    },(context)=>{
-
-        const {min1281,min1025,min821} = context.conditions;
-
-        $('._main .section03 .layout').each((_,e)=>{
-
-            if($(e).hasClass("left")){
-    
-                gsap.fromTo($(e).find('.flex .swiper'),{
-                    x : ()=>{
-                        if(min1281){
-                            return -416
-                        }
-                        if(min1025){
-                            return -326
-                        }
-                        if(min821){
-                            return -246
-                        }
-                    },
-                },{
-                    x : 0,
-                    scrollTrigger : {
-                        trigger : e,
-                        start : "top center",
-                        end : "center center",
-                        scrub : 1,
-                    }
-                });
-    
-            }else{
-    
-                gsap.fromTo($(e).find('.flex .swiper'),{
-                    x : ()=>{
-                        if(min1281){
-                            return 416
-                        }
-                        if(min1025){
-                            return 326
-                        }
-                        if(min821){
-                            return 246
-                        }
-                    },
-                },{
-                    x : 0,
-                    scrollTrigger : {
-                        trigger : e,
-                        start : "top center",
-                        end : "center center",
-                        scrub : 1,
-                    }
-                });
-    
-            }
-    
-        });
-
-    }); */
-
-
-
-    
-
 
 }

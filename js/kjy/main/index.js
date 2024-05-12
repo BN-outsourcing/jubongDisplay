@@ -23,13 +23,13 @@ export const cursorPoint = (e)=>{
     gsap.to('.cursor-point',{
         left : clientX - ($('.cursor-point').width()/2),
         top : clientY - ($('.cursor-point').height()/2)
-    })
+    });
 }
 
 let OFFSET = 0;
 let chk = 0;
 
-export const headerMove = (e)=>{
+export const headerMove = ()=>{
     
     const scrollTo = $(window).scrollTop();
 
@@ -45,7 +45,11 @@ export const headerMove = (e)=>{
     OFFSET = $(window).scrollTop();
 
 }
-$(window).on('scroll',headerMove);
+
+if(!useIsMobile()){
+    $(window).on('scroll',headerMove);
+}
+
 $(window).on('mousemove',cursorPoint);
 
 $('.header .menu').click(function(){

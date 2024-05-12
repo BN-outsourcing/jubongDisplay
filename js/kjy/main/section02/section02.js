@@ -6,6 +6,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default ()=>{
 
+    /* new Swiper('._main .section02 .flex .left', {
+        speed: 2400,
+        spaceBetween: 36,
+        loop : true,
+        // slidesPerView: 2.8,
+        slidesPerView: 'auto',
+        direction : 'horizontal',
+        autoplay: {
+            delay: 0,
+            pauseOnMouseEnter : true
+        },
+        breakpoints : {
+            821: {
+                direction : 'vertical',
+                spaceBetween: 36,
+            }
+        }
+    });
+
+    new Swiper('._main .section02 .flex .right', {
+        speed: 2400,
+        spaceBetween: 36,
+        loop : true,
+        // slidesPerView: 2.8,
+        slidesPerView: 'auto',
+        direction : 'horizontal',
+        autoplay: {
+            delay: 0,
+            reverseDirection: true,
+            pauseOnMouseEnter : true
+        },
+        breakpoints : {
+            821: {
+                direction : 'vertical',
+                spaceBetween: 36,
+            }
+        }
+    }); */
+
     gsap.set('.cursor-point',{
         opacity : 0,
     });

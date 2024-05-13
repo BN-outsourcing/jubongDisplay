@@ -42,9 +42,12 @@
                                         <input type="radio" name="s_type" id="s_type3"/>
                                         <label for="s_type3">키오스크</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="s_type" id="s_type4"/>
                                         <label for="s_type4">기타</label>
+                                    </li>
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
@@ -67,16 +70,19 @@
                                         <input type="radio" name="i_type" id="i_type4"/>
                                         <label for="i_type4">병원</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="i_type" id="i_type5"/>
                                         <label for="i_type5">기타</label>
+                                    </li>
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
                             <li>
                                 <p>설치 지역은 어디신가요?</p>
                                 <ol>
-                                    <li>
+                                    <li class="width">
                                         <input type="radio" name="region" id="region1"/>
                                         <label for="region1">서울,경기,인천(수도권)</label>
                                     </li>
@@ -100,9 +106,13 @@
                                         <input type="radio" name="region" id="region6"/>
                                         <label for="region6">제주</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="region" id="region7"/>
                                         <label for="region7">기타</label>
+                                    </li>
+                                    
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
@@ -125,9 +135,12 @@
                                         <input type="radio" name="cost" id="cost4"/>
                                         <label for="cost4">1억 이상</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="cost" id="cost5"/>
                                         <label for="cost5">기타</label>
+                                    </li>
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
@@ -150,9 +163,12 @@
                                         <input type="radio" name="date" id="date4"/>
                                         <label for="date4">1년 이내</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="date" id="date5"/>
                                         <label for="date5">기타</label>
+                                    </li>
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
@@ -176,9 +192,12 @@
                                         <input type="radio" name="route" id="route4"/>
                                         <label for="route4">소개</label>
                                     </li>
-                                    <li>
+                                    <li class="etc">
                                         <input type="radio" name="route" id="route5"/>
                                         <label for="route5">기타</label>
+                                    </li>
+                                    <li class="etcbx">
+                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
                                     </li>
                                 </ol>
                             </li>
@@ -243,6 +262,17 @@
 </div>
 
 <script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
+<script>
+    $('._Form ol li').click(function () {
+        
+        if($(this).hasClass('etc')){
+            $(this).siblings('li.etcbx').show();
+        }else{
+            $(this).siblings('li.etcbx').hide();
+        }
+        
+    });
+</script>
 
 <?php 
     include_once $_SERVER["DOCUMENT_ROOT"]."/_end.php"

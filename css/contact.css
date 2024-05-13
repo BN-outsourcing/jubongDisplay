@@ -1,19 +1,30 @@
 /* 견적상담 */
 ._sub._contact{ width: 100%; position: relative; overflow: hidden; }
+
 ._sub._contact ._Form{ width: 100%; position: relative; overflow: hidden; }
 ._sub._contact ._Form .formwrap{ width: 100%; margin-top: 120px; }
 ._sub._contact ._Form .formwrap h2{ font-size: 40px; font-weight: 700; letter-spacing: -0.019em; }
 
-._sub._contact ._Form .formwrap ul{ width: 100%; }
-._sub._contact ._Form .formwrap ul > li{ border-bottom: 1px solid #dadbdf; padding: 27px 0; box-sizing: border-box; position: relative; }
+._sub._contact ._Form .formwrap ul{ width: 100%; border-top: 1px solid #dadbdf; margin-top: 35px; }
+._sub._contact ._Form .formwrap ul > li{ border-bottom: 1px solid #dadbdf; padding: 19.5px 0; box-sizing: border-box; position: relative; }
 ._sub._contact ._Form .formwrap ul > li > p{ font-size: 20px; letter-spacing: -0.019em; font-weight: 600; width: calc(475 / 1500 * 100%); flex-shrink: 0; }
-._sub._contact ._Form .formwrap ul.basiclist > li{ width: 100%; display: flex; align-items: center; margin-right: 45px; }
-._sub._contact ._Form .formwrap ul.basiclist > li ol{ display: flex; flex-wrap: wrap; }
-._sub._contact ._Form .formwrap ul.basiclist > li ol li{ position: relative; margin-right: 45px; }
-._sub._contact ._Form .formwrap ul.basiclist > li ol li.margin{ margin-right: 103px; }
-._sub._contact ._Form .formwrap ul.basiclist > li ol li input[type="radio"]{ position: absolute; visibility: hidden; }
-._sub._contact ._Form .formwrap ul.basiclist > li ol li label{ font-size: 20px; letter-spacing: -0.019em; font-weight: 500; min-width: 160px; text-align: center; padding: 14px 20px; box-sizing: border-box; display: block; transition-duration: 0.2s; border: 1px solid #a1a3a6; border-radius: 8px; overflow: hidden; cursor: pointer;  }
 
+    /* 라디오박스 폼(기본정보입력) */
+._sub._contact ._Form .formwrap ul.basiclist > li{ width: 100%; display: flex; align-items: center; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol{ display: flex; flex-wrap: wrap; width: 100%; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li{ position: relative;  margin: 7.5px 0; margin-right: calc(45 / 1025 * 100%); width: calc(160 / 1025 * 100%); }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li:last-of-type{ margin-right: 0; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li.width{ width: calc(214 / 1025 * 100%); }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li.margin{ margin-right: calc(99 / 1025 * 100%); }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li input[type="radio"]{ position: absolute; visibility: hidden; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li label{ font-size: 20px; letter-spacing: -0.019em; font-weight: 500; width: 100%; text-align: center; padding: 14px 5px; box-sizing: border-box; display: block; transition-duration: 0.1s; border: 1px solid #a1a3a6; border-radius: 8px; overflow: hidden; cursor: pointer; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li.etcbx{ width: 100%; display: none; }
+._sub._contact ._Form .formwrap ul.basiclist > li ol li.etcbx input[type="text"]{ width: 60%; border: none; border-bottom: 1px solid #a1a3a6; box-sizing: border-box; background: none; height: 40px; padding: 0 15px; box-sizing: border-box; font-size: 18px; }
+
+._sub._contact ._Form .formwrap ul.basiclist > li ol li input[type="radio"]:checked ~ label{ background-color: #3e68ff; color: #f2f2f4; }
+
+    /* 인풋박스 폼(상세정보 입력) */
+._sub._contact ._Form .formwrap ul{  }
 
 
 

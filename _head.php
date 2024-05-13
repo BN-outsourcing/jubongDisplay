@@ -24,7 +24,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/scroll.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/scss/kjy/main.css">
     <link rel="stylesheet" href="/css/sublayout.css">
 
 

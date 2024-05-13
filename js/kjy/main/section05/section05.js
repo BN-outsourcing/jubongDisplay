@@ -29,6 +29,7 @@ export default ()=>{
             pin : true,
             pinSpacing : false,
             scrub : 1,
+            // markers : true,
         }
     })
 
@@ -45,49 +46,39 @@ export default ()=>{
             endTrigger : "._main .section05",
             // markers : true,
             start : "top center",
-            end : "bottom top",
+            end : "bottom center",
             scrub : 1,
         }
     })
-    .to('._main .section05 .h-grid .grid .col',{
-        x : (index, target, targets)=>{
-            if(gsap.getProperty(target,"x") > 0){
-                return "+=random(50%, 150%)"
-            }else{
-                return "-=random(50%, 150%)"
-            }
-        },
-        y : (index, target, targets)=>{
-            if(gsap.getProperty(target,"y") > 0){
-                return "+=random(50%, 150%)"
-            }else{
-                return "-=random(50%, 150%)"
-            }
-        }
-    },'a')
-    .to('._main .section05 .h-grid .grid .col',{
-        x : (index, target, targets)=>{
-            if(gsap.getProperty(target,"x") > 0){
-                return "+=random(50%, 150%)"
-            }else{
-                return "-=random(50%, 150%)"
-            }
-        },
-        y : (index, target, targets)=>{
-            if(gsap.getProperty(target,"y") > 0){
-                return "+=random(50%, 150%)"
-            }else{
-                return "-=random(50%, 150%)"
-            }
-        }
-    },'a+=25%')
     .from('._main .section05 .h-grid .grid .col',{
         opacity : 0.5
-    },'a')
+    },'b')
+    .from('._main .section05 .h-grid .grid',{
+        scale : 0.7,
+    },'b')
+    .to('._main .section05 .h-grid .grid .col',{
+        x : (index, target, targets)=>{
+            if(gsap.getProperty(target,"x") > 0){
+                return "+=25%"
+            }else{
+                return "-=25%"
+            }
+        },
+        y : (index, target, targets)=>{
+            if(gsap.getProperty(target,"y") > 0){
+                return "+=50%"
+            }else{
+                return "-=50%"
+            }
+        },
+        rotateX : "random(-25,-50)",
+    },'b+=35%')
+    .to('._main .section05 .h-grid',{
+        yPercent : -50
+    },'b+=35%')
     .to('._main .section05 .h-grid .grid',{
         z : 7000,
-        xPercent : -25,
-        yPercent : -15,
-    },"a+=25%")
+        // xPercent : -25,
+    },"b+=35%")
 
 }

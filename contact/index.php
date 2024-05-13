@@ -242,7 +242,7 @@
     </div>
 </div>
 
-<script type="module" src="/js/kjy/main/index.js"></script>
+<script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
 
 <?php 
     include_once $_SERVER["DOCUMENT_ROOT"]."/_end.php"

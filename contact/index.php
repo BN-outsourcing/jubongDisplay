@@ -36,7 +36,7 @@
                                     </li>
                                     <li>
                                         <input type="radio" name="s_type" id="s_type2"/>
-                                        <label for="s_type2">LCD사이니지</label>
+                                        <label for="s_type2">LCD 사이니지</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="s_type" id="s_type3"/>
@@ -213,7 +213,7 @@
                             </li>
                             <li class="half">
                                 <label for="tel">휴대폰 번호</label>
-                                <input type="tel" placeholder="휴대폰 번호를  입력해 주세요." id="tel"/>
+                                <input type="tel" placeholder="휴대폰 번호를 입력해 주세요." id="tel"/>
                             </li>
                             <li class="half">
                                 <label for="email">이메일</label>
@@ -223,33 +223,38 @@
                                 <label for="corp">기업명</label>
                                 <input type="text" placeholder="이름을 입력해 주세요." id="corp"/>
                             </li>
-                            <li>
+                            <li class="bordernone">
                                 <label for="cont">문의내용</label>
                                 <textarea id="cont" placeholder="문의내용을 입력해 주세요."></textarea>
                             </li>
-                            <li>
+                            <li class="bordernone files">
                                 <label>첨부파일</label>
-                                <p>
+                                <em>
                                     설치 예정 장소의 사진 또는 예시 자료를 첨부해 주시면 더욱 빠르고 정확한 상담이 가능합니다. <br/>
                                     10MB 이하/ 최대 10개 까지 업로드 가능합니다. <br/>
-                                    <em>(첨부가능 : jpg, jpeg,gif,png,svg,zip,pdf,ppt,pptx,doc,docx,xls,xlsx,hwp,stp,7z,heif,heic)</em>
-                                </p>
+                                    <b>(첨부가능 : jpg, jpeg, gif, png, svg, zip, pdf, ppt, pptx, doc, docx, xls, xlsx, hwp, stp, 7z, heif, heic)</b>
+                                </em>
                                 <div class="fileWrap">
                                     <input type="file" id="attach"/>
                                     <label for="attach">파일 업로드</label>
-                                    <b>filename.jpg</b>
-                                    <a href="">삭제</a>
+                                    <b></b>
+                                    <a href="" id="att_del">삭제</a>
                                 </div>
                             </li>
-                            <li>
+                            <li class="bordernone privchk">
                                 <input type="checkbox" id="priv"/>
                                 <label for="priv"><b>(필수)</b> 개인정보 수집 및 이용에 동의*</label>
                             </li>
                         </ul>
                     </div>
 
+                    <div class="submit">
+                        <a href=""><p>제출하기</p></a>
+                    </div>
                     
                 </div>
+
+                
             </section>
 
             
@@ -263,7 +268,7 @@
 
 <script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
 <script>
-    $('._Form ol li').click(function () {
+    $('._Form ol li').click(function () { // 기타 클릭 시
         
         if($(this).hasClass('etc')){
             $(this).siblings('li.etcbx').show();
@@ -271,6 +276,22 @@
             $(this).siblings('li.etcbx').hide();
         }
         
+        ScrollTrigger.refresh();
+
+    });
+
+    $('#attach').change(function () { // 첨부파일명
+        let filename = $(this).val();
+        $('li.files .fileWrap > b').text(filename);
+        $('#att_del').show();
+    });
+
+    $('#att_del').click(function () {
+        $('#attach').val("");
+        $('li.files .fileWrap > b').text("");
+        $('#att_del').hide();
+
+        return false;
     });
 </script>
 

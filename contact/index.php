@@ -18,7 +18,10 @@
             <section class="subTitle">
                 <div class="subwrap" max="1500">
                     <h1>견적상담</h1>
-                    <p><span>DISPLAY</span> 전문기업, <span>JBDISPLAY</span> 와 함께 해보세요!</p>
+                    <ul class="subTab"><!--카테고리-->
+                        <li><p><span>DISPLAY</span> 전문기업, <span>JBDISPLAY</span> 와 함께 해보세요!</p></li>
+                    </ul>
+                    
                 </div>
             </section>
 

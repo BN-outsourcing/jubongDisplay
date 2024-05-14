@@ -133,6 +133,13 @@
     ._sub._contact ._Form .submit > a{ font-size: 16px; }
 }
 
+@media screen and (max-width: 500px){
+    ._sub._contact ._Form .formwrap h2{ font-size: 20px; }
+    ._sub._contact ._Form .formwrap ul.basiclist > li ol li label{ font-size: 12px; }
+    ._sub._contact ._Form .formwrap ul.infolist > li input:not([type="checkbox"]){ font-size: 12px; }
+    ._sub._contact ._Form .formwrap ul.infolist > li textarea{ font-size: 12px; }
+}
+
 
 
 /* 문의완료 */

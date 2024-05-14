@@ -54,3 +54,9 @@ $('.header .menu').click(function(){
     }
 
 });
+
+
+// subtab motion
+gsap.timeline()
+.from('._sub .subTitle h1', { opacity: 0, y: 40, duration: .6 })
+.from('._sub .subTitle .subTab li', { opacity: 0, y: 40, duration: .6, stagger: .1 }, '-=80%')

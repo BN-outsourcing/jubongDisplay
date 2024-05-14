@@ -1,5 +1,4 @@
 .subwrap{ width: 95%; margin: 0 auto; }
-.subwrap[max="1600"]{ max-width: 1600px; }
 .subwrap[max="1500"]{ max-width: 1500px; }
 .subwrap[max="1384"]{ max-width: 1384px; }
 
@@ -8,18 +7,20 @@
 
 /* 공통 서브제목 */
 ._sub .subTitle h1{ font-size: 82px; letter-spacing: -0.019em; font-weight: 600; font-family: 'Outfit', 'Pretendard'; }
-._sub .subTitle p{ font-size: 24px; letter-spacing: -0.019em; font-weight: 600; color: #b3b3ba; line-height: 1.2; }
+._sub .subTitle p{ font-size: 24px; letter-spacing: -0.019em; font-weight: 600; color: #b3b3ba; }
 ._sub .subTitle p span{ color: #3e68ff; }
 
 @media screen and (max-width: 1440px){
     ._sub .subTitle h1{ font-size: 70px; }
-    ._sub .subTitle p{ font-size: 20px; }
+	._sub .subTitle .subTab,
+    ._sub .subTitle p{ font-size: 20px !important; }
 }
 
 @media screen and (max-width: 1280px){
     ._sub{ padding-top: 170px; }
     ._sub .subTitle h1{ font-size: 60px; }
-    ._sub .subTitle p{ font-size: 18px; }
+	._sub .subTitle .subTab,
+    ._sub .subTitle p{ font-size: 18px !important; }
 }
 
 @media screen and (max-width: 820px){
@@ -45,17 +46,16 @@
 
 @media screen and (max-width:1600px) {}
 @media screen and (max-width:1440px) {
-	._sub .subTitle .subTab{font-size: 20px; margin-top: 30px;}
+	._sub .subTitle .subTab{ margin-top: 40px; }
 }
-@media screen and (max-width:1280px) {
-	._sub .subTitle .subTab{font-size: 18px; margin-top: 30px;}
-}
+@media screen and (max-width:1280px) {}
 @media screen and (max-width:1024px) {}
 @media screen and (max-width:820px) {
-	._sub .subTitle .subTab{font-size: 14px; margin-top: 15px; }
+	._sub .subTitle .subTab{ margin-top: 20px; }
 }
 @media screen and (max-width:500px) {
-	._sub .subTitle .subTab{margin-top: 10px;}
+	._sub .subTitle .subTab{flex-direction: column; font-size: 15px !important;}
+	._sub .subTitle .subTab li{margin-right: 0; margin-bottom: 8px; border-radius: 6px; background-color: #fff; padding: 10px 20px;}
 }
 @media screen and (max-width:320px) {}
 
@@ -82,6 +82,11 @@
 ._sub ._pagination ul li.on{color: #fff;}
 ._sub ._pagination ul li.on a{background: linear-gradient(90deg, rgba(62,104,255,1) 0%, rgba(110,124,255,1) 100%);}
 
+@media screen and (max-width:500px) {
+	._sub ._pagination ul{font-size: 16px;}
+	._sub ._pagination ul li{margin-right: 2px;}
+	._sub ._pagination ul li a{width: 30px; height: 30px;}
+}
 
 /* 검색바 */
 ._sub ._searchBar{
@@ -105,9 +110,50 @@
 }
 ._sub ._searchBar button img{}
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:820px) {
 	._sub ._searchBar{width: 100%; height: 40px; padding-left: 10px;}
 	._sub ._searchBar input{font-size: 14px; padding-right: 0;}
 	._sub ._searchBar input::placeholder{font-size: 14px;}
 	._sub ._searchBar button{padding: 0 14px;}
 }
+
+
+/* 셀렉트옵션 */
+._selectOption{
+	display: flex;
+}
+._selectOption > div{
+	min-width: 130px; height: 45px; border-radius: 10px; padding: 0 20px;
+	border: 1px solid #7e7f82; box-sizing: border-box;
+	display: flex; align-items: center; justify-content: space-between;
+	position: relative; cursor: pointer; margin-right: 14px;
+}
+._selectOption > div:last-child{margin-right: 0;}
+._selectOption > div p{
+	font-size: 18px; letter-spacing: -0.025em; color: #999999; margin-right: 8px;
+	white-space: nowrap;
+}
+._selectOption > div i{font-size: 16px; color: #999999;}
+._selectOption > div ul{
+	display: none;
+	position: absolute; z-index: 1;
+	bottom: 0; left: 50%; transform: translate(-50%, 100%); margin-bottom: -5px;
+	background-color: #fff; font-size: 14px; min-width: 100%; border-radius: 10px; overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+._selectOption > div ul li{
+	cursor: pointer; min-width: 100%; text-align: center; padding: 0.8em 0.4em; box-sizing: border-box;
+
+}
+._selectOption > div ul li:hover{
+	background-color: #313131; color: #fff;
+}
+._selectOption > div ul li p{}
+
+
+@media screen and (max-width:820px) {
+	._selectOption > div{height: 40px; min-width: 110px; margin-right: 8px;}
+	._selectOption > div p{font-size: 14px;}
+	._selectOption > div ul li{	border-bottom: 1px solid #efefef;}
+}
+@media screen and (max-width:320px) {}

@@ -14,10 +14,7 @@ function subTab(option){
 
 		case 1: // Reference
 			tabList =`
-			<li><a href="">회사소개</a></li>
-			<li><a href="">회사소개</a></li>
-			<li><a href="">회사소개</a></li>
-			<li><a href="">회사소개</a></li>
+			<li><a href="./index.php">설치사례</a></li>
 			`
 		break;
 

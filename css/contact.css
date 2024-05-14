@@ -1,3 +1,6 @@
+._sub._contact .subTitle .subTab li{ background-color: unset; padding: 0; }
+
+
 /* 견적상담 */
 ._sub._contact{ width: 100%; position: relative; overflow: hidden; word-break: keep-all; }
 

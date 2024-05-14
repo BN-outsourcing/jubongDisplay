@@ -29,7 +29,13 @@
     </div>
 </div>
 
-<script type="module" src="/js/kjy/main/index.js"></script>
+<script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
+<script>
+    gsap.timeline()
+    .from('._sub._complete span.icon', { opacity: 0, y: 40, duration: .6 })
+    .from('._sub._complete > dl dt', { opacity: 0, y: 40, duration: .6 }, '-=80%')
+    .from('._sub._complete > dl dd', { opacity: 0, y: 40, duration: .6 }, '-=80%')
+</script>
 
 <?php 
     include_once $_SERVER["DOCUMENT_ROOT"]."/_end.php"

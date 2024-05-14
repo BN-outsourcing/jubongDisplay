@@ -1,4 +1,5 @@
 .subwrap{ width: 95%; margin: 0 auto; }
+.subwrap[max="1600"]{ max-width: 1600px; }
 .subwrap[max="1500"]{ max-width: 1500px; }
 .subwrap[max="1384"]{ max-width: 1384px; }
 
@@ -6,7 +7,7 @@
 ._sub{ background-color: #f2f2f4; color: #101011; padding-top: 240px; padding-bottom: 150px; }
 
 /* 공통 서브제목 */
-._sub .subTitle h1{ font-size: 82px; letter-spacing: -0.019em; font-weight: 700; }
+._sub .subTitle h1{ font-size: 82px; letter-spacing: -0.019em; font-weight: 600; font-family: 'Outfit', 'Pretendard'; }
 ._sub .subTitle p{ font-size: 24px; letter-spacing: -0.019em; font-weight: 600; color: #b3b3ba; line-height: 1.2; }
 ._sub .subTitle p span{ color: #3e68ff; }
 

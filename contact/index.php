@@ -296,6 +296,29 @@
 
         return false;
     });
+
+
+    // motion
+    gsap.timeline()
+    .from('._sub._contact ._Form .formwrap:first-child > *', { opacity: 0, y: 40, duration: .6, stagger: .1, delay: .3 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '._sub._contact ._Form .formwrap:nth-child(2)',
+            start: 'top center+=20%'
+        }
+    })
+    .from('._sub._contact ._Form .formwrap:nth-child(2) > *', { opacity: 0, y: 40, duration: .6, stagger: .1 });
+
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '._sub._contact ._Form .formwrap ul.infolist > li.files',
+            start: 'top center+=20%'
+        }
+    })
+    .from('._sub._contact ._Form .formwrap ul.infolist > li.files', { opacity: 0, y: 40, duration: .6 })
+    .from('._sub._contact ._Form .formwrap ul.infolist > li.privchk', { opacity: 0, y: 40, duration: .6 }, '-=80%')
 </script>
 
 <?php 

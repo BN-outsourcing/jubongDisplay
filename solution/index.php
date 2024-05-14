@@ -183,6 +183,13 @@
 
 
 
+    $('._sub .subTitle .subTab li').click(function () {
+        $(this).addClass('on').siblings().removeClass('on');
+        return false;
+    });
+
+
+
 </script>
 
 <?php 

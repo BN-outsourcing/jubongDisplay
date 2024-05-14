@@ -24,6 +24,8 @@
 						depth: 0,
 						act: 3,
 					});
+
+					$('._sub .subTitle h1').css('font-weight', '700');
 				</script>
 
 			</section>

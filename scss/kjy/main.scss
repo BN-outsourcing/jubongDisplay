@@ -840,6 +840,7 @@ $black : #161618;
     .section02 {
         background: #28272c;
         height: 105vh;
+        padding: 100px 0;
         position: relative;
         overflow: hidden;
 
@@ -921,7 +922,7 @@ $black : #161618;
             display: flex;
             align-items: flex-start;
             gap: 440px;
-            padding: 100px calc(170/1920*100%);
+            padding: 0 calc(170/1920*100%);
             position: absolute;
             top: 0;
             left: 0;
@@ -1134,6 +1135,8 @@ $black : #161618;
         }
 
         @media screen and (max-width : 820px) {
+
+            padding: 50px 0;
 
             .flex {
                 padding: 0;

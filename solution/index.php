@@ -18,7 +18,12 @@
             <section class="subTitle">
                 <div class="subwrap" max="1500">
                     <h1>Solution</h1>
-                    
+
+	                <ul class="subTab"><!--카테고리-->
+                        <li class="on"><a href="">CMS</a></li>
+                        <li><a href="">콘텐츠</a></li>
+                        <li><a href="">매트릭스 스위치 & 세톱박스</a></li>
+                    </ul>
                 </div>
             </section>
 
@@ -174,6 +179,13 @@
 
     swiper1.on('slideChange', function () {
         swiper2.slideTo(swiper1.realIndex, 200);
+    });
+
+
+
+    $('._sub .subTitle .subTab li').click(function () {
+        $(this).addClass('on').siblings().removeClass('on');
+        return false;
     });
 
 

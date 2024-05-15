@@ -17,8 +17,11 @@
         
             <section class="subTitle">
                 <div class="subwrap" max="1500">
-                    <h1>견적상담</h1>
-                    <p><span>DISPLAY</span> 전문기업, <span>JBDISPLAY</span> 와 함께 해보세요!</p>
+                    <h1 style="font-weight: 700;">견적상담</h1>
+                    <ul class="subTab"><!--카테고리-->
+                        <li><p><span>DISPLAY</span> 전문기업, <span>JBDISPLAY</span> 와 함께 해보세요!</p></li>
+                    </ul>
+                    
                 </div>
             </section>
 
@@ -293,6 +296,29 @@
 
         return false;
     });
+
+
+    // motion
+    gsap.timeline()
+    .from('._sub._contact ._Form .formwrap:first-child > *', { opacity: 0, y: 40, duration: .6, stagger: .1, delay: .3 });
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '._sub._contact ._Form .formwrap:nth-child(2)',
+            start: 'top center+=20%'
+        }
+    })
+    .from('._sub._contact ._Form .formwrap:nth-child(2) > *', { opacity: 0, y: 40, duration: .6, stagger: .1 });
+
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '._sub._contact ._Form .formwrap ul.infolist > li.files',
+            start: 'top center+=20%'
+        }
+    })
+    .from('._sub._contact ._Form .formwrap ul.infolist > li.files', { opacity: 0, y: 40, duration: .6 })
+    .from('._sub._contact ._Form .formwrap ul.infolist > li.privchk', { opacity: 0, y: 40, duration: .6 }, '-=80%')
 </script>
 
 <?php 

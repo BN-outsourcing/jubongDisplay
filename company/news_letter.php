@@ -24,6 +24,8 @@
 						depth: 0,
 						act: 3,
 					});
+
+					$('._sub .subTitle h1').css('font-weight', '700');
 				</script>
 
 			</section>
@@ -33,7 +35,7 @@
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -42,7 +44,7 @@
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -51,7 +53,7 @@
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -60,7 +62,7 @@
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -69,7 +71,7 @@
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -78,7 +80,7 @@
 								</a>
 							</div>
 							<div class="swiper-slide">
-								<a href="">
+								<a href="" class="card">
 									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
@@ -97,37 +99,6 @@
 						</div>
 					</div>
 				</div>
-				<script>
-					var swiper = new Swiper(".mySwiper", {
-						speed:1000,
-						navigation: {
-							nextEl: ".control .button-next",
-							prevEl: ".control .button-prev",
-						},
-						pagination: {
-							el: ".control .pagination",
-							clickable : true,
-						},
-						breakpoints:{
-							1601: {
-								slidesPerView:'3',
-								spaceBetween:57,
-							},
-							821 : {
-								slidesPerView:'3',
-								spaceBetween:20,
-							},
-							501 : {
-								slidesPerView:'2',
-								spaceBetween:10,
-							},
-							0 : {
-								slidesPerView:'1.1',
-								spaceBetween:10,
-							},
-						}
-					});
-				</script>
 			</section>
 			<section class="s2">
 				<div class="subwrap" max="1500">
@@ -138,7 +109,7 @@
 					<ul class="cardArea">
 
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -147,7 +118,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -156,7 +127,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -165,7 +136,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -174,7 +145,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -183,7 +154,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -192,7 +163,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -201,7 +172,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -210,7 +181,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -219,7 +190,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -228,7 +199,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -237,7 +208,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="" class="card">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
@@ -272,6 +243,63 @@
 
 <script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
 <script>
+	var swiper = new Swiper(".mySwiper", {
+		speed:800,
+		navigation: {
+			nextEl: ".control .button-next",
+			prevEl: ".control .button-prev",
+		},
+		pagination: {
+			el: ".control .pagination",
+			clickable : true,
+		},
+		breakpoints:{
+			1601: {
+				slidesPerView:'3',
+				spaceBetween:57,
+			},
+			821 : {
+				slidesPerView:'3',
+				spaceBetween:20,
+			},
+			501 : {
+				slidesPerView:'2',
+				spaceBetween:10,
+			},
+			0 : {
+				slidesPerView:'1.1',
+				spaceBetween:10,
+			},
+		}
+	});
+
+	let s1tl = gsap.timeline()
+	.from('._sub._company._news_letter .s1 .swiper-slide:nth-of-type(1)',{opacity:0,y:-40})
+	.from('._sub._company._news_letter .s1 .swiper-slide:nth-of-type(2)',{opacity:0,y:-40},'-=50%')
+	.from('._sub._company._news_letter .s1 .swiper-slide:nth-of-type(3)',{opacity:0,y:-40},'-=50%')
+	.from('._sub._company._news_letter .s1 .control',{opacity:0})
+
+	let card = gsap.utils.toArray('.s2 .cardArea li');
+
+	gsap.from('._sub ._searchBar',{
+		opacity:0,y:-40,
+		scrollTrigger:{
+			trigger:'._sub ._searchBar',
+			start:'top 80%',
+			toggleActions:'play none none reverse'
+		}
+	})
+
+	card.forEach(function(item,idx){
+		gsap.from(item,{
+			opacity:0,y:-40,
+			scrollTrigger:{
+				trigger:item,
+				start:'top 80%',
+				toggleActions:'play none none reverse',
+			}
+		})
+	})
 
 </script>
 

@@ -20,10 +20,12 @@
 				<script src="/js/ldh/subTab.js"></script>
 				<script>
 					subTab({
-						title: '견적상담',
+						title: '인증 및 면허',
 						depth: 0,
 						act: 2,
 					});
+
+					$('._sub .subTitle h1').css('font-weight', '700');
 				</script>
 
 			</section>

@@ -152,7 +152,7 @@
 					<ul class="cardArea">
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -165,7 +165,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -178,7 +178,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -191,7 +191,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -204,7 +204,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -217,7 +217,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -230,7 +230,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -243,7 +243,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -256,7 +256,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -269,7 +269,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -282,7 +282,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>
@@ -295,7 +295,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="https://source.unsplash.com/random/?led" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small>기업명자리</small>
 									<h3>고정글 제목이 들어가는 자리입니다</h3>

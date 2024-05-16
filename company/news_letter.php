@@ -36,7 +36,7 @@
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led)"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -45,7 +45,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -54,7 +54,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -63,7 +63,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -72,7 +72,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -81,7 +81,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a href="" class="card">
-									<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+									<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 									<div class="txtBx">
 										<small class="date">2021.02.08</small>
 										<p class="tit">고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리 고정글 제목이 들어가는 자리</p>
@@ -110,7 +110,7 @@
 
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -119,7 +119,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -128,7 +128,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -137,7 +137,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -146,7 +146,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -155,7 +155,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -164,7 +164,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -173,7 +173,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -182,7 +182,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -191,7 +191,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -200,7 +200,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>
@@ -209,7 +209,7 @@
 						</li>
 						<li>
 							<a href="" class="card">
-								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+								<div class="imgBx"><div style="background-image: url(https://source.unsplash.com/random/?led);"></div></div>
 								<div class="txtBx">
 									<small class="date">2021.02.08</small>
 									<p class="tit">제목이 들어가는 자리</p>

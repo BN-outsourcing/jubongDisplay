@@ -11,6 +11,20 @@
 
 <div class="cursor-point"></div>
 
+<!-- 팝업 -->
+<div class="licensePopup">
+	<div class="cont">
+		<div class="box">
+			<i class="xi-close-thin"></i>
+			<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
+			<div class="txtBx">
+				<strong>asdfasdfasdfasdfasdfasdfasdf</strong>
+				<p>asdf</p>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<main class="_sub _company _license">
@@ -34,7 +48,7 @@
 				<div class="subwrap" max="1384">
 					<ul class="cardArea">
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -46,7 +60,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -58,7 +72,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -70,7 +84,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -82,7 +96,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -94,7 +108,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -106,7 +120,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -118,7 +132,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -130,7 +144,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -142,7 +156,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -154,7 +168,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -166,7 +180,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="">
+							<a href="javacript:void(0)">
 								<div class="imgBx"><img src="/asset/image/sub/company/license.jpg" alt=""></div>
 								<div class="txtBx">
 									<small class="category">[특허증]</small>
@@ -213,6 +227,26 @@
 				toggleActions:'play none none reverse',
 			}
 		})
+	})
+
+
+	// 팝업 스크립트
+	$('._sub._company._license .cardArea a').click(function(){
+		let clickImg = $(this).find('.imgBx img').attr('src');
+		let clickTitle = $(this).find('.txtBx small').text();
+		let clickCont = $(this).find('.txtBx p').text();
+
+		$('.licensePopup .imgBx img').attr('src',clickImg);
+		$('.licensePopup .txtBx strong').text(clickTitle);
+		$('.licensePopup .txtBx p').text(clickCont);
+
+		$('html').css('overflow','hidden');
+		$('.licensePopup').fadeIn(200);
+	})
+
+	$('.licensePopup .box i').click(function(){
+		$('html').css('overflow','auto');
+		$('.licensePopup').fadeOut(200);
 	})
 </script>
 

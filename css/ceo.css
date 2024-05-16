@@ -1,0 +1,30 @@
+._sub._company._ceo{ width: 100%; overflow: hidden; position: relative; }
+._sub._company._ceo .visuals{ margin-top: 50px; width: 100%; overflow: hidden; position: relative; padding: 185px 0; }
+._sub._company._ceo .visuals .bg{ width: 100%; position: absolute; top: 0; left: 0; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center; animation: scale 1.5s ease-in-out; z-index: 0; }
+
+@keyframes scale {
+    0%{ transform: scale(1.2); }
+    100%{ transform: scale(1); }
+}
+
+._sub._company._ceo .visuals dl{ position: relative; z-index: 1; }
+._sub._company._ceo .visuals dl dt{ color: #6e7cff; font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.025em; }
+._sub._company._ceo .visuals dl dd{ font-size: 42px; line-height: calc(58 / 42); letter-spacing: -0.019em; color: #f2f2f4; font-weight: 500; margin-top: 20px; }
+
+._sub._company._ceo .visuals .scbx{ width: 20px; height: 36px; border-radius: 10px; border: 1px solid #fff; position: absolute; left: 50%; bottom: 30px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+._sub._company._ceo .visuals .scbx span{ width: 4px; height: 4px; background-color: #fff; border-radius: 50%; display: block; animation: wheel 1s alternate-reverse infinite ease-in-out; }
+
+@keyframes wheel {
+    0%{ transform: translateY(-6px); }
+    100%{ transform: translateY(6px); }
+}
+
+
+._sub._company._ceo .se01{ padding-top: 150px; padding-bottom: 95px; }
+._sub._company._ceo .se01 .subwrap > strong{ display: block; padding-left: 50px; font-size: 5.4167vw; color: #3e68ff; line-height: calc(96 / 104); font-family: 'Outfit', sans-serif; font-weight: 700; letter-spacing: -0.025em; box-sizing: border-box; }
+
+@media screen and (min-width: 1921px){
+    ._sub._company._ceo .se01 .subwrap > strong{ font-size: 104px; }
+}
+
+._sub._company._ceo .se01 .subwrap .tbx{ width: 100%; }

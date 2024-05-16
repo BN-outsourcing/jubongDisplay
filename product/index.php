@@ -31,7 +31,7 @@
             <article class="listWrap">
                 <ul class="gate">
                     <li>
-                        <a href="" class="card">
+                        <a href="./led.php" class="card">
                             <div class="bg" style="background-image: url(/asset/image/sub/product/gate1.jpg);"></div>
                             <div class="circle">
                                 <dl>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="card">
+                        <a href="./lcd.php" class="card">
                             <div class="bg" style="background-image: url(/asset/image/sub/product/gate2.jpg);"></div>
                             <div class="circle">
                                 <dl>
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="card">
+                        <a href="./kiosk.php" class="card">
                             <div class="bg" style="background-image: url(/asset/image/sub/product/gate3.jpg);"></div>
                             <div class="circle">
                                 <dl>

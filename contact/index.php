@@ -31,7 +31,7 @@
                         <h2>기본정보 입력</h2>
                         <ul class="basiclist">
                             <li>
-                                <p>어떤 종류의 솔루션 설치를 원하시나요?</p>
+                                <p>어떤 종류의 솔루션 설치를 원하시나요?<em>(선택)</em></p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="s_type" id="s_type1"/>
@@ -55,7 +55,7 @@
                                 </ol>
                             </li>
                             <li>
-                                <p>어떤 업종에 설치를 원하시나요?</p>
+                                <p>어떤 업종에 설치를 원하시나요?<em>(선택)</em></p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="i_type" id="i_type1"/>
@@ -83,7 +83,7 @@
                                 </ol>
                             </li>
                             <li>
-                                <p>설치 지역은 어디신가요?</p>
+                                <p>설치 지역은 어디신가요?<em>(선택)</em></p>
                                 <ol>
                                     <li class="width">
                                         <input type="radio" name="region" id="region1"/>
@@ -120,7 +120,7 @@
                                 </ol>
                             </li>
                             <li>
-                                <p>설치 예산은 어떻게 되시나요?</p>
+                                <p>설치 예산은 어떻게 되시나요?<em>(선택)</em></p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="cost" id="cost1"/>
@@ -148,7 +148,7 @@
                                 </ol>
                             </li>
                             <li>
-                                <p>예상 설치 일정이 있으신가요?</p>
+                                <p>예상 설치 일정이 있으신가요?<em>(선택)</em></p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="date" id="date1"/>
@@ -177,7 +177,7 @@
                             </li>
 
                             <li>
-                                <p>어떻게 알고 방문하셨나요?</p>
+                                <p>어떻게 알고 방문하셨나요?<em>(선택)</em></p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="route" id="route1"/>
@@ -211,37 +211,49 @@
                         <h2>상세정보 입력</h2>
                         <ul class="infolist">
                             <li class="half">
-                                <label for="name">이름</label>
+                                <label for="name">이름 <em>(선택)</em></label>
                                 <input type="text" placeholder="이름을 입력해 주세요." id="name"/>
                             </li>
                             <li class="half">
-                                <label for="tel">휴대폰 번호</label>
-                                <input type="tel" placeholder="휴대폰 번호를 입력해 주세요." id="tel"/>
+                                <label for="tel">전화번호 <b>(필수)</b></label>
+                                <input type="tel" placeholder="전화번호를 입력해 주세요." id="tel"/>
                             </li>
                             <li class="half">
-                                <label for="email">이메일</label>
+                                <label for="email">이메일 <b>(필수)</b></label>
                                 <input type="email" placeholder="이메일을 입력해 주세요." id="email"/>
                             </li>
                             <li class="half">
-                                <label for="corp">기업명</label>
+                                <label for="corp">기업명 <em>(선택)</em></label>
                                 <input type="text" placeholder="이름을 입력해 주세요." id="corp"/>
                             </li>
                             <li class="bordernone">
-                                <label for="cont">문의내용</label>
+                                <label for="cont">문의내용 <b>(필수)</b></label>
                                 <textarea id="cont" placeholder="문의내용을 입력해 주세요."></textarea>
                             </li>
                             <li class="bordernone files">
-                                <label>첨부파일</label>
+                                <label>첨부파일 <em>(선택)</em></label>
                                 <em>
                                     설치 예정 장소의 사진 또는 예시 자료를 첨부해 주시면 더욱 빠르고 정확한 상담이 가능합니다. <br/>
-                                    10MB 이하/ 최대 10개 까지 업로드 가능합니다. <br/>
+                                    10MB 이하/ 최대 3개 까지 업로드 가능합니다. <br/>
                                     <b>(첨부가능 : jpg, jpeg, gif, png, svg, zip, pdf, ppt, pptx, doc, docx, xls, xlsx, hwp, stp, 7z, heif, heic)</b>
                                 </em>
                                 <div class="fileWrap">
-                                    <input type="file" id="attach"/>
-                                    <label for="attach">파일 업로드</label>
+                                    <input type="file" id="attach1"/>
+                                    <label for="attach1">파일 업로드</label>
                                     <b></b>
-                                    <a href="" id="att_del">삭제</a>
+                                    <a href="" class="att_del">삭제</a>
+                                </div>
+                                <div class="fileWrap">
+                                    <input type="file" id="attach2"/>
+                                    <label for="attach2">파일 업로드</label>
+                                    <b></b>
+                                    <a href="" class="att_del">삭제</a>
+                                </div>
+                                <div class="fileWrap">
+                                    <input type="file" id="attach3"/>
+                                    <label for="attach3">파일 업로드</label>
+                                    <b></b>
+                                    <a href="" class="att_del">삭제</a>
                                 </div>
                             </li>
                             <li class="bordernone privchk">
@@ -283,16 +295,16 @@
 
     });
 
-    $('#attach').change(function () { // 첨부파일명
+    $('._sub._contact ._Form .formwrap ul.infolist > li.files .fileWrap input').change(function () { // 첨부파일명
         let filename = $(this).val();
-        $('li.files .fileWrap > b').text(filename);
-        $('#att_del').show();
+        $(this).siblings('b').text(filename);
+        $(this).siblings('.att_del').show();
     });
 
-    $('#att_del').click(function () {
-        $('#attach').val("");
-        $('li.files .fileWrap > b').text("");
-        $('#att_del').hide();
+    $('.att_del').click(function () { // 삭제 클릭 시
+        $(this).siblings('input').val("");
+        $(this).siblings('b').text("");
+        $(this).hide();
 
         return false;
     });

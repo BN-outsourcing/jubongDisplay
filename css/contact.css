@@ -12,6 +12,7 @@
 ._sub._contact ._Form .formwrap ul > li{ border-bottom: 1px solid #dadbdf; padding: 19.5px 0; box-sizing: border-box; position: relative; }
 ._sub._contact ._Form .formwrap ul > li.bordernone{ border-bottom: 0; }
 ._sub._contact ._Form .formwrap ul > li > p{ font-size: 20px; letter-spacing: -0.019em; font-weight: 600; width: calc(475 / 1500 * 100%); flex-shrink: 0; word-break: keep-all; padding-right: 10px; box-sizing: border-box; line-height: 1.2; }
+._sub._contact ._Form .formwrap ul > li > p em{ font-size: 0.7em; color: #3e68ff; margin-left: 5px; }
 
     /* 라디오박스 폼(기본정보입력) */
 ._sub._contact ._Form .formwrap ul.basiclist > li{ width: 100%; display: flex; align-items: center; }
@@ -31,6 +32,8 @@
 ._sub._contact ._Form .formwrap ul.infolist{ width: 100%; display: flex; flex-wrap: wrap; }
 ._sub._contact ._Form .formwrap ul.infolist > li{ width: 100%; box-sizing: border-box; padding: 27px 0; position: relative; }
 ._sub._contact ._Form .formwrap ul.infolist > li > label{ font-size: 20px; letter-spacing: -0.019em; font-weight: 600; width: 130px; flex-shrink: 0; }
+._sub._contact ._Form .formwrap ul.infolist > li > label b{ color: #df0000; font-size: 0.7em; }
+._sub._contact ._Form .formwrap ul.infolist > li > label em{ color: #3e68ff; font-size: 0.7em; }
 ._sub._contact ._Form .formwrap ul.infolist > li input:not([type="checkbox"]),
 ._sub._contact ._Form .formwrap ul.infolist > li textarea{ width: 100%; border-radius: 8px; border: 1px solid #a1a3a6; box-sizing: border-box; font-size: 20px; font-weight: 500; letter-spacing: -0.019em; background: none; }
 ._sub._contact ._Form .formwrap ul.infolist > li input::placeholder,
@@ -60,7 +63,7 @@
 
 ._sub._contact ._Form .formwrap ul.infolist > li.privchk{ display: flex; align-items: center; width: 100%; padding: 0; padding-top: 88px; }
 ._sub._contact ._Form .formwrap ul.infolist > li.privchk > label{ width: auto; display: inline-block; font-size: 20px; letter-spacing: -0.019em; color: #7e7f82; cursor: pointer; }
-._sub._contact ._Form .formwrap ul.infolist > li.privchk > label b{ color: #df0000; }
+._sub._contact ._Form .formwrap ul.infolist > li.privchk > label b{ font-size: 1em; }
 ._sub._contact ._Form .formwrap ul.infolist > li.privchk > input{ width: 27px; height: 27px; border: 1px solid #696a6c; box-sizing: border-box; cursor: pointer; margin: 0; margin-right: 18px; position: relative; overflow: hidden; transition-duration: 0.2s; }
 ._sub._contact ._Form .formwrap ul.infolist > li.privchk > input::after{ content: ''; display: block; position: absolute; top: 0; left: 0; transform: translateY(20%); transition-duration: 0.2s; color: #f2f2f4; font-size: 23px; width: 100%; height: 100%;display: flex; align-items: center; justify-content: center; font-family: 'xeicon'; }
 ._sub._contact ._Form .formwrap ul.infolist > li.privchk > input:checked{ background-color: #2d2d2f; }

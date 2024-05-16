@@ -839,8 +839,7 @@ $black : #161618;
 
     .section02 {
         background: #28272c;
-        height: 105vh;
-        padding: 100px 0;
+        height: calc(105vh + 100px);
         position: relative;
         overflow: hidden;
 
@@ -922,7 +921,7 @@ $black : #161618;
             display: flex;
             align-items: flex-start;
             gap: 440px;
-            padding: 0 calc(170/1920*100%);
+            padding: 100px calc(170/1920*100%);
             position: absolute;
             top: 0;
             left: 0;

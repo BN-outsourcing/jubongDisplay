@@ -636,8 +636,7 @@
 }
 ._main .section02 {
   background: #28272c;
-  height: 105vh;
-  padding: 100px 0;
+  height: calc(105vh + 100px);
   position: relative;
   overflow: hidden;
   /* .grid {
@@ -729,7 +728,7 @@
   display: flex;
   align-items: flex-start;
   gap: 440px;
-  padding: 0 8.8541666667%;
+  padding: 100px 8.8541666667%;
   position: absolute;
   top: 0;
   left: 0;

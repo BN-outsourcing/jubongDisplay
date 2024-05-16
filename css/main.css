@@ -637,6 +637,7 @@
 ._main .section02 {
   background: #28272c;
   height: 105vh;
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
   /* .grid {
@@ -854,7 +855,7 @@
   }
   ._main .section02 .flex {
     gap: 340px;
-    padding: 0 5%;
+    padding: 100px 5%;
   }
   ._main .section02 .card .circle dl dt {
     font-size: 28px;
@@ -876,7 +877,7 @@
   }
   ._main .section02 .flex {
     gap: 240px;
-    padding: 0 2.5%;
+    padding: 100px 2.5%;
   }
   ._main .section02 .tbx h1 {
     font-size: 32px;
@@ -893,6 +894,7 @@
 }
 @media screen and (max-width: 820px) {
   ._main .section02 {
+    padding: 50px 0;
     /* .grid {
         flex: 0 0 auto;
         display: flex;
@@ -959,31 +961,6 @@
   background: #e2e2e4;
   position: relative;
   overflow: hidden;
-  /*
-
-
-
-          @media screen and (max-width : 480px) {
-
-              .layout {
-                  .swiper {
-                      .swiper-slide {
-                          height: 307px;
-                      }
-                  }    
-                  .box {
-                      padding: 35px 7.5% 35px;
-                      h1 {
-                          font-size: 24px;
-                      }
-                      ul {
-                          margin-top: 30px;
-                          font-size: 14px;
-                      }
-                  }
-              }
-
-          } */
 }
 ._main .section03 .tbx {
   position: relative;
@@ -1068,8 +1045,9 @@
 ._main .section03 .layout.left .circle {
   left: -10%;
 }
-._main .section03 .layout.left .slide .img {
-  transform: translate(-101%);
+._main .section03 .layout.left .swiper {
+  padding: 0;
+  padding-left: 22px;
 }
 ._main .section03 .layout .slide {
   position: relative;
@@ -1149,7 +1127,7 @@
 }
 ._main .section03 .layout .box {
   border-radius: 39px;
-  background: rgba(233, 233, 235, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   display: flex;
@@ -1341,6 +1319,9 @@
     order: 2;
     text-align: left;
   }
+  ._main .section03 .layout.left .swiper {
+    padding: 0;
+  }
   ._main .section03 .layout .swiper {
     padding-right: 0;
   }
@@ -1355,6 +1336,21 @@
   }
   ._main .section03 .layout .box {
     margin-top: 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  ._main .section03 .layout .swiper .swiper-slide {
+    height: 307px;
+  }
+  ._main .section03 .layout .box {
+    padding: 35px 5% 35px;
+  }
+  ._main .section03 .layout .box h1 {
+    font-size: 24px;
+  }
+  ._main .section03 .layout .box ul {
+    margin-top: 30px;
+    font-size: 14px;
   }
 }
 ._main .section04 {
@@ -1666,7 +1662,7 @@
 }
 @media screen and (max-width: 820px) {
   ._main .section05 {
-    padding: 175px 0 411px;
+    padding: 125px 0 411px;
   }
   ._main .section05 .tbx dt {
     font-size: 42px;
@@ -1675,7 +1671,7 @@
     font-size: 20px;
   }
   ._main .section05 .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   ._main .section05 .grid .col {
     border-radius: 15px;

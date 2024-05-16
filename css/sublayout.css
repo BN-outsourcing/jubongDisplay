@@ -1,4 +1,5 @@
 .subwrap{ width: 95%; margin: 0 auto; }
+.subwrap[max="1600"]{ max-width: 1600px; }
 .subwrap[max="1500"]{ max-width: 1500px; }
 .subwrap[max="1384"]{ max-width: 1384px; }
 

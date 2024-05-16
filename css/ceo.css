@@ -27,4 +27,13 @@
     ._sub._company._ceo .se01 .subwrap > strong{ font-size: 104px; }
 }
 
-._sub._company._ceo .se01 .subwrap .tbx{ width: 100%; }
+._sub._company._ceo .se01 .subwrap .tbx{ width: 100%; display: flex; flex-direction: column; align-items: flex-end; margin-top: 90px; }
+._sub._company._ceo .se01 .subwrap .tbx p{ font-size: 22px; letter-spacing: -0.019em; font-weight: 500; line-height: calc(34 / 22); color: #6d6e72; padding-right: 30px; box-sizing: border-box; }
+._sub._company._ceo .se01 .subwrap .tbx p span{ color: #3e68ff; }
+._sub._company._ceo .se01 .subwrap .tbx em{ display: flex; align-items: center; justify-content: flex-end; margin-top: 25px; padding-right: 50px; box-sizing: border-box; }
+._sub._company._ceo .se01 .subwrap .tbx em b{ font-size: 18px; letter-spacing: -0.019em; color: #919295; font-weight: 500; }
+._sub._company._ceo .se01 .subwrap .tbx em img{ mix-blend-mode: darken; margin-left: 20px; }
+
+
+
+._sub._company._ceo .se02 .pin_{ width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }

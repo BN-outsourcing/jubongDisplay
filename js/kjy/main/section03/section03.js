@@ -7,6 +7,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default ()=>{
 
+    function trackDirection(value) {
+        typeof value !== "object" && (value = { onUpdate: value });
+        let prevTime = 0,
+          prevReversed = false,
+          anim = value.eventCallback ? value : value.animation,
+          onUpdate = value.onUpdate,
+          onToggle = value.onToggle;
+        return anim
+          ? anim.eventCallback(
+              "onUpdate",
+              trackDirection({ onUpdate: onUpdate, onToggle: onToggle })
+            )
+          : function () {
+              let time = this.totalTime(),
+                reversed = time < prevTime;
+              this.direction = reversed ? -1 : 1;
+              if (reversed !== prevReversed) {
+                onToggle && onToggle.call(this, this.direction);
+                prevReversed = reversed;
+              }
+              prevTime = time;
+              onUpdate && onUpdate.call(this, this.direction);
+            };
+      }
+
+
     ScrollTrigger.create({
         trigger : "._main .section03",
         // markers : true,
@@ -63,11 +89,11 @@ export default ()=>{
             trigger : "._main .section03 .tbx h1",
             endTrigger : "._main .section03",
             start : "top top+=7.5%",
-            // start : "center center",
-            end : "bottom bottom-=2.5%",
-            // markers : true,
+            end : "bottom bottom-=2.5%",            
             pin : true,
             pinSpacing : false,
+            // start : "center center",
+            // markers : true,
         });
         
         // 슬라이드
@@ -145,11 +171,14 @@ export default ()=>{
                             $(trigger).find(".box ul li").removeClass('act');
                             $(trigger).find(".box ul li").eq(index).addClass('act');
                         },
-                        onReverseComplete : ()=>{
-                            console.log(index);
-                            $(trigger).find(".box ul li").removeClass('act');
-                            $(trigger).find(".box ul li").eq(index-1).addClass('act');
-                        }
+                        onUpdate : trackDirection({
+                            onUpdate : (direction)=>{
+                                if(direction < 0){
+                                    $(trigger).find(".box ul li").removeClass('act');
+                                    $(trigger).find(".box ul li").eq(index-1).addClass('act');
+                                }
+                            }
+                        })
                     });
     
                 }

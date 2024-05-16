@@ -29,9 +29,27 @@
                 <div class="subwrap" max="1500">
                     <div class="formwrap">
                         <h2>기본정보 입력</h2>
+                        <ul class="infolist">
+                            <li class="half">
+                                <label for="name">이름 <em>(선택)</em></label>
+                                <input type="text" placeholder="이름을 입력해 주세요." id="name"/>
+                            </li>
+                            <li class="half">
+                                <label for="tel">전화번호 <b>(필수)</b></label>
+                                <input type="tel" placeholder="전화번호를 입력해 주세요." id="tel"/>
+                            </li>
+                            <li class="half">
+                                <label for="email">이메일 <b>(필수)</b></label>
+                                <input type="email" placeholder="이메일을 입력해 주세요." id="email"/>
+                            </li>
+                            <li class="half">
+                                <label for="corp">기업명 <em>(선택)</em></label>
+                                <input type="text" placeholder="이름을 입력해 주세요." id="corp"/>
+                            </li>
+                        </ul>
                         <ul class="basiclist">
                             <li>
-                                <p>어떤 종류의 솔루션 설치를 원하시나요?<em>(선택)</em></p>
+                                <p>어떤 종류의 솔루션 설치를 원하시나요?</p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="s_type" id="s_type1"/>
@@ -49,13 +67,10 @@
                                         <input type="radio" name="s_type" id="s_type4"/>
                                         <label for="s_type4">기타</label>
                                     </li>
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
                             <li>
-                                <p>어떤 업종에 설치를 원하시나요?<em>(선택)</em></p>
+                                <p>어떤 업종에 설치를 원하시나요?</p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="i_type" id="i_type1"/>
@@ -77,13 +92,10 @@
                                         <input type="radio" name="i_type" id="i_type5"/>
                                         <label for="i_type5">기타</label>
                                     </li>
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
                             <li>
-                                <p>설치 지역은 어디신가요?<em>(선택)</em></p>
+                                <p>설치 지역은 어디신가요?</p>
                                 <ol>
                                     <li class="width">
                                         <input type="radio" name="region" id="region1"/>
@@ -113,14 +125,10 @@
                                         <input type="radio" name="region" id="region7"/>
                                         <label for="region7">기타</label>
                                     </li>
-                                    
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
                             <li>
-                                <p>설치 예산은 어떻게 되시나요?<em>(선택)</em></p>
+                                <p>설치 예산은 어떻게 되시나요?</p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="cost" id="cost1"/>
@@ -142,13 +150,10 @@
                                         <input type="radio" name="cost" id="cost5"/>
                                         <label for="cost5">기타</label>
                                     </li>
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
                             <li>
-                                <p>예상 설치 일정이 있으신가요?<em>(선택)</em></p>
+                                <p>예상 설치 일정이 있으신가요?</p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="date" id="date1"/>
@@ -170,14 +175,11 @@
                                         <input type="radio" name="date" id="date5"/>
                                         <label for="date5">기타</label>
                                     </li>
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
 
                             <li>
-                                <p>어떻게 알고 방문하셨나요?<em>(선택)</em></p>
+                                <p>어떻게 알고 방문하셨나요?</p>
                                 <ol>
                                     <li>
                                         <input type="radio" name="route" id="route1"/>
@@ -199,35 +201,13 @@
                                         <input type="radio" name="route" id="route5"/>
                                         <label for="route5">기타</label>
                                     </li>
-                                    <li class="etcbx">
-                                        <input type="text" placeholder="기타 내용을 입력해주세요."/>
-                                    </li>
                                 </ol>
                             </li>
                         </ul>
-                    </div>
 
-                    <div class="formwrap">
-                        <h2>상세정보 입력</h2>
                         <ul class="infolist">
-                            <li class="half">
-                                <label for="name">이름 <em>(선택)</em></label>
-                                <input type="text" placeholder="이름을 입력해 주세요." id="name"/>
-                            </li>
-                            <li class="half">
-                                <label for="tel">전화번호 <b>(필수)</b></label>
-                                <input type="tel" placeholder="전화번호를 입력해 주세요." id="tel"/>
-                            </li>
-                            <li class="half">
-                                <label for="email">이메일 <b>(필수)</b></label>
-                                <input type="email" placeholder="이메일을 입력해 주세요." id="email"/>
-                            </li>
-                            <li class="half">
-                                <label for="corp">기업명 <em>(선택)</em></label>
-                                <input type="text" placeholder="이름을 입력해 주세요." id="corp"/>
-                            </li>
                             <li class="bordernone">
-                                <label for="cont">문의내용 <b>(필수)</b></label>
+                                <label for="cont">상세문의내용 <b>(필수)</b></label>
                                 <textarea id="cont" placeholder="문의내용을 입력해 주세요."></textarea>
                             </li>
                             <li class="bordernone files">
@@ -263,6 +243,7 @@
                         </ul>
                     </div>
 
+
                     <div class="submit">
                         <a href=""><p>제출하기</p></a>
                     </div>
@@ -283,18 +264,7 @@
 
 <script type="module" src="/js/jyj/sub/common/sub_share.js"></script>
 <script>
-    $('._Form ol li').click(function () { // 기타 클릭 시
-        
-        if($(this).hasClass('etc')){
-            $(this).siblings('li.etcbx').show();
-        }else{
-            $(this).siblings('li.etcbx').hide();
-        }
-        
-        ScrollTrigger.refresh();
-
-    });
-
+    
     $('._sub._contact ._Form .formwrap ul.infolist > li.files .fileWrap input').change(function () { // 첨부파일명
         let filename = $(this).val();
         $(this).siblings('b').text(filename);

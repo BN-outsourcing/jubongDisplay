@@ -86,7 +86,7 @@ export default ()=>{
 
         // Product 따라옴
         ScrollTrigger.create({
-            trigger : "._main .section03 .tbx h1",
+            trigger : "._main .section03 .tbx .h1",
             endTrigger : "._main .section03",
             start : "top top+=7.5%",
             end : "bottom bottom-=2.5%",            

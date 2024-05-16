@@ -1581,8 +1581,11 @@ $black : #161618;
             }
 
             .tbx {
-                padding: 0 2.5% 101px 0;
+                padding: 0 2.5% 101px;
                 gap: 85px;
+                .h1 {
+                    width: 182px;
+                }
                 h1 {
                     font-size: 42px;
                 }
@@ -1650,6 +1653,9 @@ $black : #161618;
                 padding: 0 0 71px 0;
                 gap: 25px;
                 flex-direction: column;
+                .h1 {
+                    width: 156px;
+                }
                 h1 {
                     font-size: 36px;
                 }

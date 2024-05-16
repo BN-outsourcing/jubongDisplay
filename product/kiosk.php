@@ -26,9 +26,9 @@
 				<script src="/js/ldh/subTab.js"></script>
 				<script>
 					subTab({
-						title: 'LED Signage',
+						title: 'Kiosk',
 						depth: 3,
-						act: 0,
+						act: 2,
 					});
 				</script>
 
@@ -44,14 +44,10 @@
 
                         <div class="pbx _1">
                             <div class="txtbx">
-                                <strong>LED 실외용</strong>
+                                <strong>KIOSK 실외용</strong>
                                 <b></b>
                                 <p>
-                                    주변환경 및 조명조건과 관계없이 야외 환경에서 정확하고 균일한 색감과 뛰어난 <br class="none"/>
-                                    명암비로 콘텐츠를 더욱 실감나게 전달합니다. 장기간 사용에 대비하여 <br class="none"/>
-                                    다양한 날씨조건 속에도 안전하게 이용할 수 있도록 강력한 내구성을 갖추고 있습니다. <br/>
-                                    궁극의 몰입감을 주는 실외 LED SIGNAGE는 경기장, 공연장, 대형건물의 <br class="none"/>
-                                    외벽 등을 화려하게 수놓아 특별한 시청경험을 선사합니다.
+                                    사용자와 상호작용하고 효율적인 정보를 제공하는 종합정보안내시스템입니다.  <br/>실외 환경에서 사용되므로 내구성이 뛰어나고 강화된 구조로 설계되었으며, <br class="none"/> 야외조명 아래에서도 화면이 잘 보일 수 있도록 고해상도, 고밝기를 제공합니다. <br/>개방된 장소에서 무인으로 운영되면서 이용자들이 정보획득, 물품구매, 발권, 등록 등의 처리를 쉽게 할 수 있도록 설계되었습니다.
                                 </p>
                             </div>
                             <div class="imgbx">
@@ -62,14 +58,10 @@
 
                         <div class="pbx _2">
                             <div class="txtbx">
-                                <strong>LED 실내용</strong>
+                                <strong>KIOSK 가로형</strong>
                                 <b></b>
                                 <p>
-                                    쇼핑몰, 영화관, 방송 스튜디오, 기업 로비와 강당 등 다양한 스펙트럼을 가지고 <br class="none"/>
-                                    있는 실내 LED SIGNAGE는 최대 2배 높은 밝기와 명암비로 <br class="none"/>
-                                    생생한 화질을 구현합니다. 유연한 구조로 제작되어 곡면 형태의 디스플레이도 <br class="none"/>
-                                    구현할 수 있으며, 매끄러운 접합면, 넓은 시야각, 크기에 제한 없으므로 <br class="none"/>
-                                    실내 광고에 가장 적합한 제품입니다.
+                                    주로 사용되는 콘텐츠와 설치장소의 환경에 따라 정보를 제공하는 키오스크입니다.<br/> 대부분의 노트북과 모니터 화면과 유사한 가로방향의 화면을 갖고 있어 <br/>사용자들에게 익숙하게 다가갈 수 있는 제품이며, <br class="none"/>정보 제공이나 비교 분석 콘텐츠를 표시하는데 효과적입니다.
                                 </p>
                             </div>
                             <div class="imgbx">
@@ -80,17 +72,28 @@
 
                         <div class="pbx _3">
                             <div class="txtbx">
-                                <strong>LED 특수용</strong>
+                                <strong>KIOSK 세로형</strong>
                                 <b></b>
                                 <p>
-                                    옥내외의 시야를 연결시킬 수 있는 제품으로 빛이 통과하는 기능을 가진 유리와 유사한 <br class="none"/>
-                                    LED DISPLAY로 시야를 방해하지 않으면서 건축과 미디어 디자인을 결합해 <br class="none"/>
-                                    다양한 개성을 살릴 수 있는 특수 전광판입니다. <br/>
-                                    쇼핑몰 매장내 쇼윈도, 유리난간 등에 활용되고 있습니다.
+                                    주로 사용되는 콘텐츠와 설치장소의 환경에 따라 정보를 제공하는 키오스크입니다. <br/>모바일 기기의 화면 방향과 유사하며 사용자가 편리하게 상호작용 할 수 있으며, <br class="none"/>광고나 포스터 형식의 콘텐츠를 표시하는데 효과적입니다.
                                 </p>
                             </div>
                             <div class="imgbx">
                                 <canvas id="product3" width="770" height="577" style="background-image: url(/asset/image/sub/product/led1/led01_1.gif);"></canvas>
+                                <iframe src="https://player.vimeo.com/video/946063239?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="JBDisplay_LED_실외용_외부건물"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="pbx _4">
+                            <div class="txtbx">
+                                <strong>KIOSK 주문제작</strong>
+                                <b></b>
+                                <p>
+                                    다양한 옵션 추가선택과 디자인이 가능하여 필요에 따른 다양한 형태의 제작이 가능합니다. <br/>주문결제시스템, 자동높이조절, 배리어프리(Barrier free) 등 <br class="none"/>모두가 편의를 얻을 서비스 제품을 제공합니다.
+                                </p>
+                            </div>
+                            <div class="imgbx">
+                                <canvas id="product4" width="770" height="577" style="background-image: url(/asset/image/sub/product/led1/led01_1.gif);"></canvas>
                                 <iframe src="https://player.vimeo.com/video/946063239?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="JBDisplay_LED_실외용_외부건물"></iframe>
                             </div>
                         </div>

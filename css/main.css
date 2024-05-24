@@ -1160,8 +1160,8 @@
   color: #4b4b4d;
   border-radius: 1000px;
   display: inline-block;
-  transition: 0.4s;
-  transition-property: color, background;
+  /* transition: 0.4s;
+  transition-property: color, background; */
   /* &:hover {
       background: #3e68ff;
       color: $white;

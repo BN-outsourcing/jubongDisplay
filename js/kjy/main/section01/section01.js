@@ -6,13 +6,13 @@ gsap.registerPlugin(ScrollToPlugin);
 
 export default ()=>{
 
-    $('html').css('overflow','hidden');
+    // $('html').css('overflow','hidden');
 
-    window.onload = function() {
+    /* window.onload = function() {
         if(!useIsMobile()){
             gsap.to(window, { duration: 0.1, scrollTo: 0 });
         }
-    };
+    }; */
 
     if(!useIsMobile()){
         ScrollTrigger.create({
